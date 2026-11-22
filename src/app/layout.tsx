@@ -89,8 +89,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-[#080808] text-[#f5f4f0] selection:bg-[#a7c080] selection:text-black font-sans">
         <LuxuryProvider initialCart={initialCart}>
-          {/* Header temporarily removed */}
-          {/* <Navbar /> */}
+          <Navbar />
           <div className="flex-1">{children}</div>
           <CartDrawer />
           <Footer />

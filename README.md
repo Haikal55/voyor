@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VOYOR | Ultra-Luxury Fashion & Haute Couture
 
-## Getting Started
+An ultra-luxury fashion e-commerce platform inspired by the visual grandeur, editorial storytelling, and architecture of **Versace** (`versace.com`).
 
-First, run the development server:
+---
 
+## 🏛️ Architectural Highlights
+
+* **Frontend:** Next.js 15 (App Router, React 19, Server Components) + Tailwind CSS v4 + Framer Motion.
+* **Backend:** Integrated Zero-Overhead Next.js Server Actions & Route Handlers. Direct database queries with 0ms network serialization penalty.
+* **Database & ORM:** SQLite (`voyor.db`) with **Drizzle ORM**. Instant queries, zero-cost, no external database clusters needed.
+* **Localization & Multi-Currency:** Live dynamic currency converter for **USD ($)**, **EUR (€)**, **GBP (£)**, and **IDR (Rp)**.
+* **100% Free & Self-Hostable:** Standalone containerized deployment (`output: 'standalone'`). Runs on any Linux VPS, Docker, Coolify, Railway, or local machine without Vercel lock-in.
+
+---
+
+## 💎 Features
+
+1. **Cinematic Runway Experience:**
+   * Full-bleed editorial campaign hero with Milano Fashion Week FW26 aesthetics.
+   * Asymmetrical lookbook grids with hover image reveal (campaign vs. studio shots).
+2. **Interactive Luxury Bag & Checkout:**
+   * Slide-out shopping bag (`CartDrawer`) with quantity adjustment.
+   * Dynamic progress bar towards Complimentary Global VIP Courier.
+   * In-drawer frictionless VIP checkout simulation that writes directly to the SQLite `orders` table and returns a unique Italian luxury order number (`VY-XXXXXX-XXX`).
+3. **Maison Heritage & Craftsmanship:**
+   * Editorial storytelling section honoring Italian silk mills in Como, leather artisans in Florence, and 24K gold hardware plating.
+4. **Universal Search:**
+   * Instant modal search across collections, materials, and runway looks.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Seed Database
+The repository includes a rich seed script with runway pieces, sizes, variants, and high-resolution fashion photography:
+```bash
+npx tsx src/lib/db/seed.ts
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🐳 Self-Hosting for Free ($0) with Docker
 
-To learn more about Next.js, take a look at the following resources:
+VOYOR is built with `output: 'standalone'` so you can host it anywhere without Vercel:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+docker compose up -d --build
+```
+Your boutique will be running at port `3000` with the SQLite database persisted on your host system.

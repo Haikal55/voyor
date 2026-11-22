@@ -1,69 +1,113 @@
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { getAllCategories, getAllProducts, getRunwayProducts } from "@/lib/db/queries";
+import { HeroBanner } from "@/components/HeroBanner";
+import { RunwayShowcase } from "@/components/RunwayShowcase";
+import { MaisonHeritage } from "@/components/MaisonHeritage";
+import { ProductCard } from "@/components/ProductCard";
+import { SearchModal } from "@/components/SearchModal";
+import { Sparkles, ArrowRight } from "lucide-react";
 
-export default function Home() {
+// Revalidate statically every hour or on-demand
+export const revalidate = 3600;
+
+export default function HomePage() {
+  const categories = getAllCategories();
+  const allProducts = getAllProducts();
+  const runwayProducts = getRunwayProducts();
+
+  // Selected iconic products for the editorial catalog grid
+  const iconProducts = allProducts.slice(0, 6);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-[#080808] text-white">
+      {/* Cinematic Full-Bleed Runway Hero */}
+      <HeroBanner />
+
+      {/* Featured Categories Carousel / Grid */}
+      <section className="py-16 bg-[#0a0a0a] border-b border-[#1c1c1c]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-xl mx-auto mb-10">
+            <span className="text-[10px] uppercase tracking-luxury text-[#a7c080] block font-medium mb-1">
+              Curated Universes
+            </span>
+            <h2 className="text-2xl sm:text-3xl uppercase tracking-[0.04em] font-medium text-white">
+              The VOYOR Collections
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {categories.slice(0, 4).map((cat) => (
+              <Link
+                key={cat.id}
+                href={`/category/${cat.slug}`}
+                className="group relative aspect-[3/4] bg-[#141414] overflow-hidden border border-[#222] hover:border-[#a7c080]/50 transition-all duration-500"
+              >
+                {cat.heroImage && (
+                  <Image
+                    src={cat.heroImage}
+                    alt={cat.name}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-center">
+                  <h3 className="text-sm sm:text-base text-white uppercase tracking-wider group-hover:text-[#a7c080] transition-colors">
+                    {cat.name}
+                  </h3>
+                  <span className="text-[9px] uppercase tracking-ultra text-neutral-400 group-hover:text-white transition-colors mt-1 inline-block">
+                    Explore &rarr;
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Runway Fall/Winter Couture Showcase */}
+      <RunwayShowcase runwayProducts={runwayProducts} />
+
+      {/* The Icons Collection Grid */}
+      <section className="py-20 bg-[#080808]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-[#1c1c1c] gap-4">
+            <div>
+              <span className="text-[#a7c080] text-[11px] uppercase tracking-luxury mb-2 block font-medium">
+                The Permanent Archive
+              </span>
+              <h2 className="text-3xl sm:text-4xl text-white font-medium tracking-[0.04em] uppercase">
+                Iconic{" "}
+                <span className="font-script text-[#a7c080] text-4xl sm:text-5xl font-normal tracking-normal ml-1">
+                  Silhouettes
+                </span>
+              </h2>
+            </div>
+            <Link
+              href="/category/women"
+              className="inline-flex items-center space-x-1.5 text-xs uppercase tracking-luxury text-[#a7c080] hover:text-white transition-colors"
+            >
+              <span>Explore All Creations</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {iconProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Heritage & Atelier Storytelling */}
+      <MaisonHeritage />
+
+      {/* Interactive Global Search Modal */}
+      <SearchModal allProducts={allProducts} />
+    </main>
   );
 }

@@ -109,18 +109,14 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Primary Luxury Navigation Bar (Comfortable Mobile Height & Ample Clearance) */}
+        {/* Primary Luxury Navigation Bar (Consistent, Stable Luxury Dimensions) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`grid grid-cols-3 items-center transition-all duration-300 ${
-              isScrolled ? "h-16 sm:h-18 py-1.5 sm:py-2" : "h-18 sm:h-22 py-2 sm:py-3"
-            }`}
-          >
+          <div className="h-16 sm:h-20 grid grid-cols-3 items-center">
             {/* Left Column: Menu Button & Search */}
             <div className="flex items-center space-x-3 sm:space-x-5 justify-start">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="group flex items-center space-x-2 py-1.5 text-neutral-200 hover:text-[#a7c080] transition-colors cursor-pointer"
+                className="group flex items-center space-x-2 py-2 text-neutral-200 hover:text-[#a7c080] transition-colors cursor-pointer"
                 aria-label="Open navigation menu"
               >
                 <Menu className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -131,7 +127,7 @@ export function Navbar() {
 
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="hidden sm:flex items-center space-x-1.5 text-neutral-300 hover:text-[#a7c080] transition-colors py-1.5 cursor-pointer"
+                className="hidden sm:flex items-center space-x-1.5 text-neutral-300 hover:text-[#a7c080] transition-colors py-2 cursor-pointer"
                 aria-label="Search collections"
               >
                 <Search className="w-4 h-4" />
@@ -141,13 +137,13 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Center Column: Iconic VOYOR Brandmark (Never Cut Off on Mobile) */}
+            {/* Center Column: Iconic VOYOR Brandmark (Centered, Never Cut Off or Overlapping) */}
             <div className="flex justify-center text-center">
-              <Link href="/" className="inline-block group py-1">
-                <span className="text-xl sm:text-3xl md:text-4xl tracking-[0.2em] font-medium text-white block uppercase group-hover:text-[#a7c080] transition-colors leading-snug">
+              <Link href="/" className="inline-flex flex-col items-center justify-center group py-1">
+                <span className="text-xl sm:text-2xl md:text-3xl tracking-[0.22em] font-medium text-white block uppercase group-hover:text-[#a7c080] transition-colors leading-none">
                   VOYOR
                 </span>
-                <span className="text-[8px] sm:text-[10px] tracking-[0.25em] text-[#a7c080] uppercase block font-medium mt-0.5">
+                <span className="text-[8px] sm:text-[9px] tracking-[0.25em] text-[#a7c080] uppercase block font-medium mt-1">
                   Atelier Milano
                 </span>
               </Link>

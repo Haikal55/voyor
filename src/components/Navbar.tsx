@@ -23,20 +23,20 @@ export function Navbar() {
     country,
     setCountry,
   } = useLuxury();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // 100% Static header: only reveal top region bar when scrolled all the way to the very top (scrollY === 0)
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 20);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when drawer is open
+  // Prevent background scroll when mobile drawer is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -65,18 +65,18 @@ export function Navbar() {
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        {/* Top Region & Currency Strip (Only visible when at the absolute top of page) */}
+        {/* Desktop-Only Top Region & Concierge Strip (Hidden on Mobile) */}
         <div
-          className={`overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 transition-all duration-200 ease-in-out ${
+          className={`hidden sm:block overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-6 lg:px-8 transition-all duration-300 ease-in-out ${
             isScrolled
-              ? "h-0 opacity-0 pointer-events-none py-0 border-b-0 hidden"
+              ? "h-0 opacity-0 pointer-events-none py-0 border-b-0"
               : "h-9 opacity-100 py-2 bg-black/60 backdrop-blur-sm border-b border-white/5 text-[#b8b8b8]"
           }`}
         >
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
             {/* Automatic Country & Currency Selector */}
             <div className="flex items-center space-x-1.5">
-              <span className="text-neutral-400 hidden xs:inline">Shipping To:</span>
+              <span className="text-neutral-400">Shipping To:</span>
               <div className="relative inline-flex items-center">
                 <select
                   aria-label="Shipping destination and currency"
@@ -98,7 +98,7 @@ export function Navbar() {
             </div>
 
             {/* Right: Clean Luxury Concierge Indicator */}
-            <div className="hidden sm:flex items-center space-x-3 text-[10px] text-neutral-400">
+            <div className="flex items-center space-x-3 text-[10px] text-neutral-400">
               <span>Client Concierge</span>
               <span className="text-neutral-600">•</span>
               <span className="text-neutral-300">Milano</span>
@@ -110,10 +110,10 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Primary Luxury Navigation Bar (Consistent, Stable Luxury Dimensions) */}
+        {/* Primary Luxury Navigation Bar: 100% Fixed Invariant Height */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-16 sm:h-20 grid grid-cols-3 items-center">
-            {/* Left Column: Menu Button & Search */}
+          <div className="h-[60px] sm:h-20 grid grid-cols-3 items-center">
+            {/* Left Column: Menu Button & Desktop Search */}
             <div className="flex items-center space-x-3 sm:space-x-5 justify-start">
               <button
                 onClick={() => setMobileMenuOpen(true)}
@@ -138,7 +138,7 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Center Column: Iconic VOYOR Brandmark (Centered, Never Cut Off or Overlapping) */}
+            {/* Center Column: Iconic VOYOR Brandmark (Symmetric, Centered, No Overlap) */}
             <div className="flex justify-center text-center">
               <Link href="/" className="inline-flex flex-col items-center justify-center group py-1">
                 <span className="text-xl sm:text-2xl md:text-3xl tracking-[0.22em] font-medium text-white block uppercase group-hover:text-[#a7c080] transition-colors leading-none">
@@ -150,19 +150,19 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* Right Column: Mobile Search, Wishlist & Shopping Bag */}
-            <div className="flex items-center justify-end space-x-3 sm:space-x-5">
+            {/* Right Column: Search (Mobile), Wishlist & Shopping Bag */}
+            <div className="flex items-center justify-end space-x-2 sm:space-x-5">
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="sm:hidden p-1.5 text-neutral-200 hover:text-[#a7c080] transition-colors"
-                aria-label="Search"
+                className="sm:hidden p-2 text-neutral-200 hover:text-[#a7c080] transition-colors cursor-pointer"
+                aria-label="Search collections"
               >
                 <Search className="w-4 h-4" />
               </button>
 
               <button
                 onClick={() => alert("Wishlist: Sign in to your VIP account to save private selections.")}
-                className="hidden sm:block p-1.5 text-neutral-300 hover:text-[#a7c080] transition-colors"
+                className="hidden sm:block p-2 text-neutral-300 hover:text-[#a7c080] transition-colors cursor-pointer"
                 aria-label="Wishlist"
                 title="Wishlist"
               >
@@ -172,12 +172,12 @@ export function Navbar() {
               {/* Shopping Bag Trigger */}
               <button
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-1.5 text-neutral-100 hover:text-[#a7c080] transition-colors flex items-center space-x-1.5 group"
+                className="relative p-2 text-neutral-100 hover:text-[#a7c080] transition-colors flex items-center space-x-1.5 group cursor-pointer"
                 aria-label="Shopping bag"
               >
                 <ShoppingBag className="w-5 h-5 text-[#a7c080] transition-transform group-hover:scale-110" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-[#a7c080] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
+                  <span className="absolute top-1 right-1 sm:top-0.5 sm:right-0.5 bg-[#a7c080] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
                     {cartCount}
                   </span>
                 )}
@@ -247,21 +247,21 @@ export function Navbar() {
                       <Link
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`flex items-center justify-between py-2 text-xl uppercase tracking-wider group transition-colors ${
+                        className={`flex items-center justify-between py-2.5 text-base tracking-luxury transition-colors ${
                           link.highlight
-                            ? "text-[#a7c080] hover:text-[#d3c6aa]"
-                            : "text-neutral-200 hover:text-[#a7c080]"
+                            ? "text-[#a7c080] font-semibold"
+                            : "text-neutral-200 hover:text-white"
                         }`}
                       >
                         <span>{link.name}</span>
-                        <ChevronRight className="w-4 h-4 text-[#555] group-hover:text-[#a7c080] transform group-hover:translate-x-1 transition-all" />
+                        <ChevronRight className="w-4 h-4 text-neutral-600" />
                       </Link>
                     </motion.div>
                   ))}
                 </div>
 
                 {/* Country & Currency Selector in Drawer */}
-                <div className="pt-6 border-t border-[#1c1c1c] space-y-2">
+                <div className="pt-6 border-t border-[#1c1c1c] space-y-3">
                   <span className="text-[10px] uppercase tracking-ultra text-[#888] block">
                     Shipping Country & Currency
                   </span>
@@ -283,28 +283,29 @@ export function Navbar() {
                 </div>
 
                 {/* VIP Services Links */}
-                <div className="pt-6 border-t border-[#1c1c1c] space-y-3 text-xs text-neutral-400">
+                <div className="pt-6 border-t border-[#1c1c1c] space-y-3">
                   <span className="text-[10px] uppercase tracking-ultra text-[#888] block">
-                    Client Services
+                    Maison Services
                   </span>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-xs text-neutral-400">
                     <p className="hover:text-white cursor-pointer transition-colors">
-                      Book Private Boutique Appointment
+                      Client Concierge & VIP Hotline
                     </p>
                     <p className="hover:text-white cursor-pointer transition-colors">
-                      Complimentary White-Glove Courier
+                      Book Private Salon Appointment
                     </p>
                     <p className="hover:text-white cursor-pointer transition-colors">
-                      Garment Authenticity Certificate
+                      Milano, Paris & Tokyo Boutiques
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* Drawer Footer */}
-              <div className="p-6 border-t border-[#1c1c1c] bg-[#070707] text-[10px] uppercase tracking-luxury text-[#777] space-y-1">
-                <p className="text-[#a7c080] font-medium">Via Montenapoleone 8, Milano</p>
-                <p>Private Concierge: VIP@VOYOR.COM</p>
+              <div className="p-6 border-t border-[#1c1c1c] bg-[#070707] text-center">
+                <span className="text-[10px] uppercase tracking-ultra text-neutral-500 block">
+                  VOYOR Official Online Boutique • Milano
+                </span>
               </div>
             </motion.div>
           </div>

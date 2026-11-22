@@ -80,10 +80,7 @@ export default function HomePage() {
                 The Permanent Archive
               </span>
               <h2 className="text-3xl sm:text-4xl text-white font-medium tracking-[0.04em] uppercase">
-                Iconic{" "}
-                <span className="font-script text-[#a7c080] text-4xl sm:text-5xl font-normal tracking-normal ml-1">
-                  Silhouettes
-                </span>
+                Iconic <span className="text-[#a7c080]">Silhouettes</span>
               </h2>
             </div>
             <Link

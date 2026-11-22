@@ -149,7 +149,7 @@ export function Navbar() {
                 <span className="text-2xl sm:text-3xl md:text-4xl tracking-[0.2em] font-medium text-white block uppercase group-hover:text-[#a7c080] transition-colors leading-none">
                   VOYOR
                 </span>
-                <span className="font-script text-[14px] sm:text-[16px] text-[#a7c080] block font-normal tracking-normal -mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                <span className="text-[9px] sm:text-[10px] tracking-[0.25em] text-[#a7c080] uppercase block font-medium mt-1">
                   Atelier Milano
                 </span>
               </Link>

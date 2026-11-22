@@ -15,10 +15,7 @@ export function RunwayShowcase({ runwayProducts = [] }: { runwayProducts: Produc
               Milan Fashion Week Showcase
             </span>
             <h2 className="text-3xl sm:text-4xl text-white font-medium tracking-[0.04em] uppercase">
-              Runway{" "}
-              <span className="font-script text-[#a7c080] text-4xl sm:text-5xl font-normal tracking-normal ml-1">
-                Couture
-              </span>
+              Runway <span className="text-[#a7c080]">Couture</span>
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-neutral-400 max-w-lg font-light">
               Limited-edition atelier creations engineered in Milan and Rome, defined by dramatic boned silhouettes and liquid Barocco silk.

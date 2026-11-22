@@ -35,9 +35,7 @@ export function MaisonHeritage() {
 
             <h2 className="text-3xl sm:text-4xl text-white font-medium tracking-[0.04em] uppercase leading-snug">
               Artisanal Devotion, <br />
-              <span className="font-script text-[#a7c080] text-4xl sm:text-5xl font-normal tracking-normal">
-                Unapologetic Power
-              </span>
+              <span className="text-[#a7c080]">Unapologetic Power</span>
             </h2>
 
             <p className="text-sm text-neutral-300 font-light leading-relaxed">

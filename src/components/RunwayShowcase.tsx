@@ -180,13 +180,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
                     {/* Multilayered Editorial Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent pointer-events-none" />
 
-                    {/* Top Pill: Look Number / New Badge */}
-                    <div className="absolute top-3 left-3 z-10 pointer-events-none">
-                      <span className="bg-black/80 backdrop-blur-sm border border-white/15 text-[#a7c080] text-[9px] uppercase tracking-luxury px-2 py-0.5 font-medium">
-                        {product.subtitle || "Runway FW26"}
-                      </span>
-                    </div>
-
                     {/* Bottom Metadata Overlay (Aligned like reference screenshot) */}
                     <div className="absolute bottom-4 left-4 right-4 text-center z-10 space-y-1.5 pointer-events-none">
                       <h3 className="text-sm sm:text-base text-white uppercase tracking-wider font-medium line-clamp-1 group-hover:text-[#a7c080] transition-colors leading-tight">

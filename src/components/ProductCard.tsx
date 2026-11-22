@@ -59,20 +59,6 @@ export function ProductCard({ product }: { product: Product }) {
           )}
         </Link>
 
-        {/* Status Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 pointer-events-none z-10">
-          {product.isRunway && (
-            <span className="bg-black/90 backdrop-blur-sm border border-[#a7c080]/70 text-[#a7c080] text-[9px] uppercase tracking-luxury px-2 py-0.5 font-medium shadow-md">
-              Runway FW26
-            </span>
-          )}
-          {product.isNew && !product.isRunway && (
-            <span className="bg-white/95 text-black text-[9px] uppercase tracking-luxury px-2 py-0.5 font-semibold shadow-md">
-              New Arrival
-            </span>
-          )}
-        </div>
-
         {/* Quick Add Button & Drawer */}
         <div className="absolute bottom-3 inset-x-3 transition-all duration-300 z-20 opacity-90 sm:opacity-0 sm:translate-y-2 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
           {showQuickSelect ? (

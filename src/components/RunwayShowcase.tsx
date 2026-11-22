@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Product, formatPrice } from "@/lib/types";
 import { useLuxury } from "@/context/luxury-context";
 
@@ -14,7 +14,6 @@ interface RunwayShowcaseProps {
 
 export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
   const { currency } = useLuxury();
-  // Default to "men" to match the user's reference screenshot showcasing Men's runway accessories
   const [selectedGender, setSelectedGender] = useState<"women" | "men">("men");
   const carouselRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -25,7 +24,9 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
     if (selectedGender === "men") {
       return (
         p.categoryId === "cat_men" ||
-        (p.categoryId === "cat_accessories" && !p.name.toLowerCase().includes("gown") && !p.name.toLowerCase().includes("sandals"))
+        (p.categoryId === "cat_accessories" &&
+          !p.name.toLowerCase().includes("gown") &&
+          !p.name.toLowerCase().includes("sandals"))
       );
     } else {
       return (
@@ -45,7 +46,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
 
   useEffect(() => {
     checkScroll();
-    // Reset scroll to beginning when gender changes
     if (carouselRef.current) {
       carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
     }
@@ -53,8 +53,7 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
 
   const handleScroll = (direction: "left" | "right") => {
     if (carouselRef.current) {
-      const cardWidth = carouselRef.current.clientWidth / 4;
-      const scrollDistance = cardWidth * 2;
+      const scrollDistance = carouselRef.current.clientWidth * 0.75;
       carouselRef.current.scrollBy({
         left: direction === "left" ? -scrollDistance : scrollDistance,
         behavior: "smooth",
@@ -64,27 +63,30 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-white text-black border-y border-neutral-200 transition-colors">
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Header Strip with Title & Gender Toggle */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-6 mb-2 border-b border-neutral-200 gap-4">
+    <section className="py-20 bg-[#080808] text-white border-y border-[#1c1c1c] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top Header with Title & Gender Toggle */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-8 mb-6 border-b border-[#1c1c1c] gap-6">
           <div>
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#556b2f] font-semibold block mb-1">
-              Milan Fashion Week Atelier
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-luxury text-[#a7c080] font-medium block mb-2">
+              Milan Fashion Week Showcase
             </span>
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-[0.03em] uppercase text-neutral-900">
-              Runway <span className="text-[#556b2f]">Collection</span>
+            <h2 className="text-3xl sm:text-4xl text-white font-medium tracking-[0.04em] uppercase">
+              Runway <span className="text-[#a7c080]">Couture</span>
             </h2>
+            <p className="mt-2 text-xs sm:text-sm text-neutral-400 max-w-lg font-light leading-relaxed">
+              Limited-edition atelier creations engineered in Milan and Rome, defined by dramatic silhouettes and liquid Barocco silk.
+            </p>
           </div>
 
           {/* Luxury Gender Toggle: WOMEN [ o ] MEN */}
-          <div className="flex items-center space-x-3 select-none self-end sm:self-auto">
+          <div className="flex items-center space-x-3 select-none self-end sm:self-auto pt-2 sm:pt-0">
             <button
               onClick={() => setSelectedGender("women")}
-              className={`text-[11px] sm:text-xs uppercase tracking-wider transition-colors cursor-pointer ${
+              className={`text-[11px] sm:text-xs uppercase tracking-luxury transition-colors cursor-pointer ${
                 selectedGender === "women"
-                  ? "text-neutral-900 font-semibold"
-                  : "text-neutral-400 font-normal hover:text-neutral-600"
+                  ? "text-white font-semibold"
+                  : "text-neutral-500 font-normal hover:text-neutral-300"
               }`}
             >
               WOMEN
@@ -93,11 +95,11 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
             {/* Pill Switch Slider */}
             <button
               onClick={() => setSelectedGender(selectedGender === "women" ? "men" : "women")}
-              className="relative w-12 h-6 rounded-full border border-neutral-400 bg-neutral-100 p-0.5 flex items-center cursor-pointer transition-colors"
+              className="relative w-12 h-6 rounded-full border border-neutral-700 bg-[#161616] p-0.5 flex items-center cursor-pointer transition-colors"
               aria-label="Toggle Women / Men runway collection"
             >
               <motion.div
-                className="w-5 h-5 rounded-full bg-black shadow-sm"
+                className="w-5 h-5 rounded-full bg-[#a7c080] shadow-sm"
                 animate={{ x: selectedGender === "men" ? 22 : 0 }}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
               />
@@ -105,10 +107,10 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
 
             <button
               onClick={() => setSelectedGender("men")}
-              className={`text-[11px] sm:text-xs uppercase tracking-wider transition-colors cursor-pointer ${
+              className={`text-[11px] sm:text-xs uppercase tracking-luxury transition-colors cursor-pointer ${
                 selectedGender === "men"
-                  ? "text-neutral-900 font-semibold"
-                  : "text-neutral-400 font-normal hover:text-neutral-600"
+                  ? "text-white font-semibold"
+                  : "text-neutral-500 font-normal hover:text-neutral-300"
               }`}
             >
               MEN
@@ -116,63 +118,86 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
           </div>
         </div>
 
-        {/* Carousel Viewport with Flush Card Divider Layout */}
+        {/* Carousel Viewport with Full-Bleed Editorial Cards */}
         <div className="relative group/carousel">
-          {/* Left Arrow Button (Bordered square like Versace) */}
+          {/* Left Arrow Button */}
           <button
             onClick={() => handleScroll("left")}
             disabled={!canScrollLeft}
             aria-label="Scroll left"
-            className={`absolute -left-2 sm:left-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 bg-white border border-neutral-900 flex items-center justify-center text-neutral-900 hover:bg-neutral-900 hover:text-white transition-all shadow-md cursor-pointer ${
+            className={`absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 bg-black/90 border border-neutral-700 hover:border-[#a7c080] hover:bg-[#a7c080] hover:text-black flex items-center justify-center text-white transition-all shadow-2xl backdrop-blur-md cursor-pointer ${
               canScrollLeft ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
             }`}
           >
             <ArrowLeft className="w-4 h-4 stroke-[1.5]" />
           </button>
 
-          {/* Horizontal Track of Flush Cards */}
+          {/* Horizontal Track of Full-Bleed Cards */}
           <div
             ref={carouselRef}
             onScroll={checkScroll}
-            className="flex overflow-x-auto scrollbar-none scroll-smooth snap-x snap-mandatory border-b border-neutral-200"
+            className="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-none scroll-smooth snap-x snap-mandatory py-2"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {filteredProducts.map((product, idx) => {
-              const primaryImg = product.images[0]?.url || "";
+            {filteredProducts.map((product) => {
+              const primaryImg = product.images.find((img) => img.isPrimary) || product.images[0];
+              const secondaryImg = product.images.find((img) => !img.isPrimary) || primaryImg;
 
               return (
                 <div
                   key={product.id}
-                  className={`snap-start shrink-0 w-[80%] sm:w-1/2 md:w-1/3 lg:w-1/4 bg-[#fbfbfb] hover:bg-white transition-colors duration-300 flex flex-col justify-between border-r border-neutral-200 ${
-                    idx === 0 ? "border-l border-neutral-200" : ""
-                  }`}
+                  className="snap-start shrink-0 w-[82%] sm:w-[48%] md:w-[32%] lg:w-[23.5%]"
                 >
                   <Link
                     href={`/product/${product.slug}`}
-                    className="block group h-full flex flex-col justify-between p-4 sm:p-6"
+                    className="group relative block aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#222] hover:border-[#a7c080]/60 transition-all duration-500 shadow-xl"
                   >
-                    {/* Studio Product Image - Clean Studio Light Frame */}
-                    <div className="relative aspect-[4/5] w-full bg-[#f5f5f5] flex items-center justify-center overflow-hidden mb-4">
-                      {primaryImg && (
-                        <Image
-                          src={primaryImg}
-                          alt={product.name}
-                          fill
-                          sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 25vw"
-                          className="object-contain p-6 sm:p-8 transition-opacity duration-300 group-hover:opacity-95"
-                          priority={idx < 4}
-                        />
-                      )}
+                    {/* Primary Full-Bleed Image */}
+                    {primaryImg && (
+                      <Image
+                        src={primaryImg.url}
+                        alt={product.name}
+                        fill
+                        sizes="(max-width: 640px) 82vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-cover object-top opacity-85 group-hover:opacity-0 transition-opacity duration-700 ease-in-out"
+                      />
+                    )}
+
+                    {/* Secondary Full-Bleed Image (Cross-fades in smoothly on hover, no zoom scale) */}
+                    {secondaryImg && (
+                      <Image
+                        src={secondaryImg.url}
+                        alt={`${product.name} - Alternate View`}
+                        fill
+                        sizes="(max-width: 640px) 82vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-cover object-top opacity-0 group-hover:opacity-95 transition-opacity duration-700 ease-in-out"
+                      />
+                    )}
+
+                    {/* Multilayered Editorial Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent pointer-events-none" />
+
+                    {/* Top Pill: Look Number / New Badge */}
+                    <div className="absolute top-3 left-3 z-10 pointer-events-none">
+                      <span className="bg-black/80 backdrop-blur-sm border border-white/15 text-[#a7c080] text-[9px] uppercase tracking-luxury px-2 py-0.5 font-medium">
+                        {product.subtitle || "Runway FW26"}
+                      </span>
                     </div>
 
-                    {/* Bottom Metadata: Clean Title & Price */}
-                    <div className="space-y-1 text-left pt-2 pb-1">
-                      <h3 className="text-xs sm:text-[13px] font-normal text-neutral-900 tracking-tight leading-snug group-hover:text-black line-clamp-1">
+                    {/* Bottom Metadata Overlay (Aligned like reference screenshot) */}
+                    <div className="absolute bottom-4 left-4 right-4 text-center z-10 space-y-1.5 pointer-events-none">
+                      <h3 className="text-sm sm:text-base text-white uppercase tracking-wider font-medium line-clamp-1 group-hover:text-[#a7c080] transition-colors leading-tight">
                         {product.name}
                       </h3>
-                      <p className="text-xs text-neutral-500 font-normal">
-                        {formatPrice(product.basePrice, currency)}
-                      </p>
+                      <div className="flex items-center justify-center space-x-2 text-[10px] uppercase tracking-ultra text-neutral-300">
+                        <span className="text-[#a7c080] font-medium">
+                          {formatPrice(product.basePrice, currency)}
+                        </span>
+                        <span className="text-neutral-500">•</span>
+                        <span className="text-neutral-400 group-hover:text-white transition-colors">
+                          Explore &rarr;
+                        </span>
+                      </div>
                     </div>
                   </Link>
                 </div>
@@ -180,12 +205,12 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
             })}
           </div>
 
-          {/* Right Arrow Button (Bordered square like Versace) */}
+          {/* Right Arrow Button */}
           <button
             onClick={() => handleScroll("right")}
             disabled={!canScrollRight}
             aria-label="Scroll right"
-            className={`absolute -right-2 sm:right-2 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 bg-white border border-neutral-900 flex items-center justify-center text-neutral-900 hover:bg-neutral-900 hover:text-white transition-all shadow-md cursor-pointer ${
+            className={`absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 bg-black/90 border border-neutral-700 hover:border-[#a7c080] hover:bg-[#a7c080] hover:text-black flex items-center justify-center text-white transition-all shadow-2xl backdrop-blur-md cursor-pointer ${
               canScrollRight ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
             }`}
           >

@@ -28,7 +28,8 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 25);
+      // Static header: only reveal top region bar when scrolled all the way to the very top ("ke atas page banget")
+      setIsScrolled(window.scrollY > 5);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -58,18 +59,18 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 ease-in-out pt-[env(safe-area-inset-top,0px)] ${
+        className={`fixed top-0 left-0 right-0 z-40 w-full transition-colors duration-300 pt-[env(safe-area-inset-top,0px)] ${
           isScrolled
             ? "bg-[#080808]/98 backdrop-blur-md border-b border-[#222] shadow-2xl shadow-black/80"
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        {/* Top Region & Currency Strip (Automatically Detected by Country, No Globe Icon) */}
+        {/* Top Region & Currency Strip (Only visible when at the very top of page) */}
         <div
-          className={`transition-all duration-300 overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 ${
+          className={`overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 transition-all duration-300 ease-in-out ${
             isScrolled
-              ? "max-h-0 opacity-0 pointer-events-none py-0"
-              : "max-h-12 opacity-100 py-2 bg-black/60 backdrop-blur-sm border-b border-white/5 text-[#b8b8b8]"
+              ? "h-0 opacity-0 pointer-events-none py-0 border-b-0"
+              : "h-9 opacity-100 py-2 bg-black/60 backdrop-blur-sm border-b border-white/5 text-[#b8b8b8]"
           }`}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">

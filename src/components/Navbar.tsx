@@ -11,7 +11,6 @@ import {
   Heart,
   ChevronRight,
   ChevronDown,
-  Globe,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CURRENCIES, COUNTRIES } from "@/lib/types";
@@ -59,24 +58,23 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 ease-in-out pt-[env(safe-area-inset-top,0px)] ${
           isScrolled
-            ? "bg-[#080808]/95 backdrop-blur-md border-b border-[#222] shadow-2xl shadow-black/80"
+            ? "bg-[#080808]/98 backdrop-blur-md border-b border-[#222] shadow-2xl shadow-black/80"
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        {/* Top Region & Currency Strip (Automatically Detected by Country) */}
+        {/* Top Region & Currency Strip (Automatically Detected by Country, No Globe Icon) */}
         <div
-          className={`transition-all duration-500 overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 ${
+          className={`transition-all duration-300 overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 ${
             isScrolled
-              ? "max-h-0 opacity-0 py-0"
-              : "max-h-10 opacity-100 py-2 bg-black/40 backdrop-blur-sm border-b border-white/5 text-[#b8b8b8]"
+              ? "max-h-0 opacity-0 pointer-events-none py-0"
+              : "max-h-12 opacity-100 py-2 bg-black/60 backdrop-blur-sm border-b border-white/5 text-[#b8b8b8]"
           }`}
         >
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
             {/* Automatic Country & Currency Selector */}
-            <div className="flex items-center space-x-2">
-              <Globe className="w-3.5 h-3.5 text-[#a7c080] flex-shrink-0" />
+            <div className="flex items-center space-x-1.5">
               <span className="text-neutral-400 hidden xs:inline">Shipping To:</span>
               <div className="relative inline-flex items-center">
                 <select
@@ -111,18 +109,18 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Primary Luxury Navigation Bar */}
+        {/* Primary Luxury Navigation Bar (Comfortable Mobile Height & Ample Clearance) */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`grid grid-cols-3 items-center transition-all duration-300 ${
-              isScrolled ? "h-14 sm:h-16" : "h-16 sm:h-20"
+              isScrolled ? "h-16 sm:h-18 py-1.5 sm:py-2" : "h-18 sm:h-22 py-2 sm:py-3"
             }`}
           >
             {/* Left Column: Menu Button & Search */}
             <div className="flex items-center space-x-3 sm:space-x-5 justify-start">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="group flex items-center space-x-2 py-1.5 text-neutral-200 hover:text-[#a7c080] transition-colors"
+                className="group flex items-center space-x-2 py-1.5 text-neutral-200 hover:text-[#a7c080] transition-colors cursor-pointer"
                 aria-label="Open navigation menu"
               >
                 <Menu className="w-5 h-5 transition-transform group-hover:scale-110" />
@@ -133,7 +131,7 @@ export function Navbar() {
 
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="hidden sm:flex items-center space-x-1.5 text-neutral-300 hover:text-[#a7c080] transition-colors py-1.5"
+                className="hidden sm:flex items-center space-x-1.5 text-neutral-300 hover:text-[#a7c080] transition-colors py-1.5 cursor-pointer"
                 aria-label="Search collections"
               >
                 <Search className="w-4 h-4" />
@@ -143,13 +141,13 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Center Column: Iconic VOYOR Brandmark (Completely Unobstructed) */}
+            {/* Center Column: Iconic VOYOR Brandmark (Never Cut Off on Mobile) */}
             <div className="flex justify-center text-center">
               <Link href="/" className="inline-block group py-1">
-                <span className="text-2xl sm:text-3xl md:text-4xl tracking-[0.2em] font-medium text-white block uppercase group-hover:text-[#a7c080] transition-colors leading-none">
+                <span className="text-xl sm:text-3xl md:text-4xl tracking-[0.2em] font-medium text-white block uppercase group-hover:text-[#a7c080] transition-colors leading-snug">
                   VOYOR
                 </span>
-                <span className="text-[9px] sm:text-[10px] tracking-[0.25em] text-[#a7c080] uppercase block font-medium mt-1">
+                <span className="text-[8px] sm:text-[10px] tracking-[0.25em] text-[#a7c080] uppercase block font-medium mt-0.5">
                   Atelier Milano
                 </span>
               </Link>

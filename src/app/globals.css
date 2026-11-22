@@ -62,7 +62,7 @@ html,
 body {
   background-color: #080808;
   color: #f5f4f0;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;

@@ -7,7 +7,7 @@ import { ArrowDown } from "lucide-react";
 
 export function HeroBanner() {
   return (
-    <section className="relative w-full min-h-[90vh] sm:min-h-[95vh] flex items-center justify-center overflow-hidden bg-black pt-28 sm:pt-36 pb-24 px-4 sm:px-6">
+    <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-black pt-16 sm:pt-24 pb-20 px-4 sm:px-6">
       {/* Background Hero Image */}
       <div className="absolute inset-0 pointer-events-none">
         <Image

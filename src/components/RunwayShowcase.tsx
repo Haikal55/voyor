@@ -141,7 +141,8 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
           >
             {filteredProducts.map((product) => {
               const primaryImg = product.images.find((img) => img.isPrimary) || product.images[0];
-              const secondaryImg = product.images.find((img) => !img.isPrimary) || primaryImg;
+              const secondaryImg = product.images.find((img) => !img.isPrimary) || product.images[1] || primaryImg;
+              const hasSecondary = Boolean(secondaryImg && secondaryImg.url !== primaryImg?.url);
 
               return (
                 <div
@@ -150,27 +151,29 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
                 >
                   <Link
                     href={`/product/${product.slug}`}
-                    className="group relative block aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#222] hover:border-[#a7c080]/60 transition-all duration-500 shadow-xl"
+                    className="group relative block aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#222] hover:border-[#a7c080]/60 transition-colors duration-300 shadow-xl"
                   >
-                    {/* Primary Full-Bleed Image */}
+                    {/* Primary Full-Bleed Image (Instant switch, no fade animation) */}
                     {primaryImg && (
                       <Image
                         src={primaryImg.url}
                         alt={product.name}
                         fill
                         sizes="(max-width: 640px) 82vw, (max-width: 1024px) 33vw, 25vw"
-                        className="object-cover object-top opacity-85 group-hover:opacity-0 transition-opacity duration-700 ease-in-out"
+                        className={`object-cover object-top opacity-90 ${
+                          hasSecondary ? "group-hover:hidden" : ""
+                        }`}
                       />
                     )}
 
-                    {/* Secondary Full-Bleed Image (Cross-fades in smoothly on hover, no zoom scale) */}
-                    {secondaryImg && (
+                    {/* Secondary Full-Bleed Image (Instant display on hover, no fade animation) */}
+                    {hasSecondary && (
                       <Image
                         src={secondaryImg.url}
                         alt={`${product.name} - Alternate View`}
                         fill
                         sizes="(max-width: 640px) 82vw, (max-width: 1024px) 33vw, 25vw"
-                        className="object-cover object-top opacity-0 group-hover:opacity-95 transition-opacity duration-700 ease-in-out"
+                        className="object-cover object-top opacity-95 hidden group-hover:block"
                       />
                     )}
 

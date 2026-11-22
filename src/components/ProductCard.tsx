@@ -14,7 +14,8 @@ export function ProductCard({ product }: { product: Product }) {
   const [justAdded, setJustAdded] = useState(false);
 
   const primaryImage = product.images.find((img) => img.isPrimary) || product.images[0];
-  const secondaryImage = product.images.find((img) => !img.isPrimary) || primaryImage;
+  const secondaryImage = product.images.find((img) => !img.isPrimary) || product.images[1] || primaryImage;
+  const hasSecondary = Boolean(secondaryImage && secondaryImage.url !== primaryImage?.url);
 
   const handleQuickAdd = async (variantId: string) => {
     await addToCart(variantId, 1);
@@ -33,15 +34,27 @@ export function ProductCard({ product }: { product: Product }) {
       }}
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#1f1f1f] group-hover:border-[#a7c080]/40 transition-colors duration-500">
+      <div className="relative aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#1f1f1f] group-hover:border-[#a7c080]/40 transition-colors duration-300">
         <Link href={`/product/${product.slug}`} className="block w-full h-full relative">
+          {/* Primary Product Image (Instant swap, no fade) */}
           {primaryImage && (
             <Image
-              src={isHovered && secondaryImage ? secondaryImage.url : primaryImage.url}
+              src={primaryImage.url}
               alt={product.name}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover object-top transition-opacity duration-300"
+              className={`object-cover object-top ${hasSecondary ? "group-hover:hidden" : ""}`}
+            />
+          )}
+
+          {/* Secondary Product Image (Instant on hover, no fade) */}
+          {hasSecondary && (
+            <Image
+              src={secondaryImage.url}
+              alt={`${product.name} - Alternate Angle`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover object-top hidden group-hover:block"
             />
           )}
         </Link>

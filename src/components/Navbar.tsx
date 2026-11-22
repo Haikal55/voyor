@@ -28,8 +28,8 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Static header: only reveal top region bar when scrolled all the way to the very top ("ke atas page banget")
-      setIsScrolled(window.scrollY > 5);
+      // 100% Static header: only reveal top region bar when scrolled all the way to the very top (scrollY === 0)
+      setIsScrolled(window.scrollY > 0);
     };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -59,17 +59,17 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 w-full transition-colors duration-300 pt-[env(safe-area-inset-top,0px)] ${
+        className={`fixed top-0 left-0 right-0 z-40 w-full transition-colors duration-300 ${
           isScrolled
             ? "bg-[#080808]/98 backdrop-blur-md border-b border-[#222] shadow-2xl shadow-black/80"
             : "bg-transparent border-b border-transparent"
         }`}
       >
-        {/* Top Region & Currency Strip (Only visible when at the very top of page) */}
+        {/* Top Region & Currency Strip (Only visible when at the absolute top of page) */}
         <div
-          className={`overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 transition-all duration-300 ease-in-out ${
+          className={`overflow-hidden text-[10px] sm:text-[11px] uppercase tracking-luxury px-4 sm:px-8 transition-all duration-200 ease-in-out ${
             isScrolled
-              ? "h-0 opacity-0 pointer-events-none py-0 border-b-0"
+              ? "h-0 opacity-0 pointer-events-none py-0 border-b-0 hidden"
               : "h-9 opacity-100 py-2 bg-black/60 backdrop-blur-sm border-b border-white/5 text-[#b8b8b8]"
           }`}
         >

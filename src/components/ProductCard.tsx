@@ -1,38 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product, formatPrice } from "@/lib/types";
 import { useLuxury } from "@/context/luxury-context";
-import { ShoppingBag, Check } from "lucide-react";
 
 export function ProductCard({ product }: { product: Product }) {
-  const { currency, addToCart, isLoadingCart } = useLuxury();
-  const [isHovered, setIsHovered] = useState(false);
-  const [showQuickSelect, setShowQuickSelect] = useState(false);
-  const [justAdded, setJustAdded] = useState(false);
+  const { currency } = useLuxury();
 
   const primaryImage = product.images.find((img) => img.isPrimary) || product.images[0];
   const secondaryImage = product.images.find((img) => !img.isPrimary) || product.images[1] || primaryImage;
   const hasSecondary = Boolean(secondaryImage && secondaryImage.url !== primaryImage?.url);
 
-  const handleQuickAdd = async (variantId: string) => {
-    await addToCart(variantId, 1);
-    setShowQuickSelect(false);
-    setJustAdded(true);
-    setTimeout(() => setJustAdded(false), 2000);
-  };
-
   return (
-    <div
-      className="group relative flex flex-col luxury-card-hover"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        setShowQuickSelect(false);
-      }}
-    >
+    <div className="group relative flex flex-col luxury-card-hover">
       {/* Image Container */}
       <div className="relative aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#1f1f1f] group-hover:border-[#a7c080]/40 transition-colors duration-300">
         <Link href={`/product/${product.slug}`} className="block w-full h-full relative">
@@ -58,53 +40,6 @@ export function ProductCard({ product }: { product: Product }) {
             />
           )}
         </Link>
-
-        {/* Quick Add Button & Drawer */}
-        <div className="absolute bottom-3 inset-x-3 transition-all duration-300 z-20 opacity-90 sm:opacity-0 sm:translate-y-2 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
-          {showQuickSelect ? (
-            <div className="bg-black/95 border border-[#a7c080] p-2 text-center backdrop-blur-md shadow-2xl animate-fadeIn">
-              <span className="text-[10px] uppercase tracking-wider text-[#a7c080] block mb-1.5 font-medium">
-                Select Tailored Size:
-              </span>
-              <div className="flex flex-wrap gap-1.5 justify-center">
-                {product.variants.map((v) => (
-                  <button
-                    key={v.id}
-                    onClick={() => handleQuickAdd(v.id)}
-                    disabled={isLoadingCart}
-                    className="px-2 py-1 bg-[#1a1a1a] hover:bg-[#a7c080] hover:text-black text-white text-[10px] uppercase tracking-wider border border-[#333] transition-colors"
-                  >
-                    {v.size}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <button
-              onClick={() => {
-                if (product.variants.length === 1) {
-                  handleQuickAdd(product.variants[0].id);
-                } else {
-                  setShowQuickSelect(true);
-                }
-              }}
-              disabled={isLoadingCart}
-              className="w-full py-2.5 bg-black/90 hover:bg-[#a7c080] text-white hover:text-black border border-[#a7c080]/60 text-[10px] uppercase tracking-luxury font-bold flex items-center justify-center space-x-1.5 transition-all backdrop-blur-sm shadow-lg"
-            >
-              {justAdded ? (
-                <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Added to Bag</span>
-                </>
-              ) : (
-                <>
-                  <ShoppingBag className="w-3.5 h-3.5 text-[#a7c080]" />
-                  <span>Quick Add</span>
-                </>
-              )}
-            </button>
-          )}
-        </div>
       </div>
 
       {/* Product Details */}
@@ -123,7 +58,7 @@ export function ProductCard({ product }: { product: Product }) {
           </p>
         </div>
 
-        <div className="pt-1 flex items-baseline justify-between border-t border-[#1a1a1a]">
+        <div className="pt-2 flex items-baseline justify-between border-t border-[#1a1a1a]">
           <span className="text-sm font-semibold text-[#a7c080]">
             {formatPrice(product.basePrice, currency)}
           </span>

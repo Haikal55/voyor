@@ -179,13 +179,16 @@ export function getCategorySchema(category: Category, products: Product[]) {
     description: category.description || SITE_DESCRIPTION,
     mainEntity: {
       "@type": "ItemList",
-      itemListElement: products.map((product, idx) => ({
-        "@type": "ListItem",
-        position: idx + 1,
-        url: `${SITE_URL}/product/${product.slug}`,
-        name: product.name,
-        image: product.image.startsWith("http") ? product.image : `${SITE_URL}${product.image}`,
-      })),
+      itemListElement: products.map((product, idx) => {
+        const primaryImg = product.images?.[0]?.url || DEFAULT_OG_IMAGE;
+        return {
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `${SITE_URL}/product/${product.slug}`,
+          name: product.name,
+          image: primaryImg.startsWith("http") ? primaryImg : `${SITE_URL}${primaryImg}`,
+        };
+      }),
     },
   };
 }

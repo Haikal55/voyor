@@ -77,7 +77,77 @@ export function initDbAndSeed() {
       items_json TEXT NOT NULL,
       created_at INTEGER
     );
+
+    CREATE TABLE IF NOT EXISTS news_articles (
+      id TEXT PRIMARY KEY,
+      slug TEXT NOT NULL UNIQUE,
+      title TEXT NOT NULL,
+      subtitle TEXT,
+      category TEXT NOT NULL,
+      author TEXT NOT NULL,
+      author_role TEXT DEFAULT 'Senior Fashion Critic',
+      published_at INTEGER,
+      hero_image TEXT NOT NULL,
+      hero_image_alt TEXT,
+      hero_image_caption TEXT,
+      content TEXT NOT NULL,
+      reading_time TEXT DEFAULT '4 min read',
+      is_featured INTEGER DEFAULT 0,
+      is_trending INTEGER DEFAULT 0,
+      tags_json TEXT,
+      blocks_json TEXT,
+      gallery_json TEXT,
+      source_url TEXT,
+      created_at INTEGER
+    );
   `);
+
+  // Seed news if empty
+  try {
+    const newsCount = sqlite.prepare("SELECT COUNT(*) as count FROM news_articles").get() as { count: number };
+    if (!newsCount || newsCount.count === 0) {
+      const newsJsonPath = path.join(process.cwd(), "scripts", "vogue_scraped_news.json");
+      if (fs.existsSync(newsJsonPath)) {
+        console.log("Seeding editorial news articles from Vogue archive...");
+        const newsItems = JSON.parse(fs.readFileSync(newsJsonPath, "utf-8"));
+        const stmt = sqlite.prepare(`
+          INSERT OR REPLACE INTO news_articles (
+            id, slug, title, subtitle, category, author, author_role,
+            published_at, hero_image, hero_image_alt, hero_image_caption,
+            content, reading_time, is_featured, is_trending, tags_json,
+            blocks_json, gallery_json, source_url, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `);
+        for (const art of newsItems) {
+          stmt.run(
+            art.id,
+            art.slug,
+            art.title,
+            art.subtitle,
+            art.category,
+            art.author,
+            art.authorRole,
+            Math.floor(new Date(art.publishedAt).getTime()),
+            art.heroImage,
+            art.heroImageAlt,
+            art.heroImageCaption,
+            art.content,
+            art.readingTime,
+            art.isFeatured ? 1 : 0,
+            art.isTrending ? 1 : 0,
+            JSON.stringify(art.tags),
+            JSON.stringify(art.blocks || []),
+            JSON.stringify(art.galleryImages || []),
+            art.sourceUrl,
+            Date.now()
+          );
+        }
+        console.log(`Seeded ${newsItems.length} Vogue news articles.`);
+      }
+    }
+  } catch (err) {
+    console.warn("Could not auto-seed news:", err);
+  }
 
   if (process.argv.includes("--reset")) {
     sqlite.exec("DELETE FROM cart_items; DELETE FROM product_variants; DELETE FROM product_images; DELETE FROM products; DELETE FROM categories;");

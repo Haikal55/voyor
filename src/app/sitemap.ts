@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getAllCategories, getAllProducts } from "@/lib/db/queries";
+import { getAllCategories, getAllProducts, getAllNewsArticles } from "@/lib/db/queries";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const categories = getAllCategories();
   const products = getAllProducts();
+  const newsArticles = getAllNewsArticles();
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -13,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
+    },
+    {
+      url: `${SITE_URL}/news`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/book-appointment`,
@@ -43,10 +50,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const productRoutes: MetadataRoute.Sitemap = products.map((prod) => ({
     url: `${SITE_URL}/product/${prod.slug}`,
-    lastModified: new Date(prod.createdAt || Date.now()),
+    lastModified: prod.createdAt ? new Date(prod.createdAt) : now,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...productRoutes];
+  const newsRoutes: MetadataRoute.Sitemap = newsArticles.map((art) => ({
+    url: `${SITE_URL}/news/${art.slug}`,
+    lastModified: new Date(art.publishedAt || Date.now()),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...categoryRoutes, ...productRoutes, ...newsRoutes];
 }

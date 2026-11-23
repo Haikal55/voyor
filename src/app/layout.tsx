@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 import { LuxuryProvider } from "@/context/luxury-context";
 import { Navbar } from "@/components/Navbar";
@@ -89,6 +90,12 @@ const radiantFont = localFont({
   display: "swap",
   preload: false,
   fallback: ["Radiant RR Bold", "Radiant RR", "OPTIRadiant-Bold", "sans-serif"],
+});
+
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  variable: "--font-bodoni",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -192,7 +199,7 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${sfPro.variable} ${scriptFont.variable} ${radiantFont.variable} h-full antialiased`}
+      className={`${sfPro.variable} ${scriptFont.variable} ${radiantFont.variable} ${bodoni.variable} h-full antialiased`}
     >
       <head>
         <script

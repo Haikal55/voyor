@@ -158,6 +158,7 @@ export interface Product {
   origin: string;
   detailsJson: string | null;
   careGuide: string | null;
+  createdAt?: Date | null;
   images: ProductImage[];
   variants: ProductVariant[];
   category?: Category;
@@ -175,4 +176,35 @@ export interface CartItemDetailed {
     basePrice: number;
     image: string;
   };
+}
+
+export interface ArticleBlock {
+  type: "heading" | "paragraph" | "image" | "quote";
+  text?: string;
+  url?: string;
+  alt?: string;
+  caption?: string;
+}
+
+export interface NewsArticle {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string | null;
+  category: string;
+  author: string;
+  authorRole: string;
+  publishedAt: Date | string;
+  heroImage: string;
+  heroImageAlt: string | null;
+  heroImageCaption: string | null;
+  content: string;
+  readingTime: string;
+  isFeatured: boolean;
+  isTrending: boolean;
+  tags: string[];
+  sourceUrl?: string | null;
+  blocks?: ArticleBlock[];
+  galleryImages?: { url: string; alt?: string; caption?: string }[];
+  createdAt?: Date;
 }

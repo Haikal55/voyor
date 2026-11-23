@@ -164,3 +164,26 @@ export const userAppointments = sqliteTable("user_appointments", {
   status: text("status").default("Confirmed"),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
 });
+
+export const newsArticles = sqliteTable("news_articles", {
+  id: text("id").primaryKey(),
+  slug: text("slug").notNull().unique(),
+  title: text("title").notNull(),
+  subtitle: text("subtitle"),
+  category: text("category").notNull(),
+  author: text("author").notNull(),
+  authorRole: text("author_role").default("Senior Fashion Critic"),
+  publishedAt: integer("published_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+  heroImage: text("hero_image").notNull(),
+  heroImageAlt: text("hero_image_alt"),
+  heroImageCaption: text("hero_image_caption"),
+  content: text("content").notNull(),
+  readingTime: text("reading_time").default("4 min read"),
+  isFeatured: integer("is_featured", { mode: "boolean" }).default(false),
+  isTrending: integer("is_trending", { mode: "boolean" }).default(false),
+  tagsJson: text("tags_json"),
+  blocksJson: text("blocks_json"),
+  galleryJson: text("gallery_json"),
+  sourceUrl: text("source_url"),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});

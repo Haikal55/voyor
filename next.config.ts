@@ -17,6 +17,22 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "wallpapercave.com",
       },
+      {
+        protocol: "https",
+        hostname: "assets.vogue.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media.vogue.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media.glamour.com",
+      },
+      {
+        protocol: "https",
+        hostname: "media.gq.com",
+      },
     ],
   },
   serverExternalPackages: ["better-sqlite3"],

@@ -102,6 +102,17 @@ export function MobileMenu({ categories = [] }: { categories?: Category[] }) {
                     <span>Home</span>
                     <ChevronRight className="w-4 h-4 text-[#555]" />
                   </Link>
+                  <Link
+                    href="/news"
+                    onClick={close}
+                    className="flex items-center justify-between py-2.5 border-b border-[#1c1c1c] text-sm uppercase tracking-wider text-white hover:text-[#a7c080] transition-colors"
+                  >
+                    <span className="flex items-center gap-2">
+                      <span>The Gazette & News</span>
+                      <span className="text-[9px] bg-[#a7c080]/10 text-[#a7c080] border border-[#a7c080]/30 px-1.5 py-0.2 uppercase font-medium">New</span>
+                    </span>
+                    <ChevronRight className="w-4 h-4 text-[#555]" />
+                  </Link>
                 </nav>
 
                 <nav className="space-y-1">

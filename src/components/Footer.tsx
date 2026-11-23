@@ -160,6 +160,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/news" className="hover:text-[#a7c080] transition-colors">
+                  The Gazette & Runway News
+                </Link>
+              </li>
+              <li>
                 <Link href="/category/runway-couture" className="hover:text-[#a7c080] transition-colors">
                   Press & Editorial
                 </Link>

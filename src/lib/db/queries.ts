@@ -1,7 +1,7 @@
 import { db } from "./index";
-import { categories, products, productImages, productVariants, cartItems } from "./schema";
-import { eq, desc, asc, or } from "drizzle-orm";
-import { Product, Category, CartItemDetailed } from "../types";
+import { categories, products, productImages, productVariants, cartItems, newsArticles } from "./schema";
+import { eq, desc, asc, or, and, ne } from "drizzle-orm";
+import { Product, Category, CartItemDetailed, NewsArticle } from "../types";
 
 export function getAllCategories(): Category[] {
   const cats = db.select().from(categories).orderBy(asc(categories.displayOrder)).all();
@@ -240,3 +240,160 @@ export function getCartItemsDetailed(sessionId: string): CartItemDetailed[] {
 
   return detailed;
 }
+
+function mapArticle(raw: any): NewsArticle {
+  let tags: string[] = [];
+  try {
+    if (raw.tagsJson) {
+      tags = JSON.parse(raw.tagsJson);
+    }
+  } catch {}
+
+  let blocks: any[] | undefined = undefined;
+  try {
+    if (raw.blocksJson) {
+      blocks = JSON.parse(raw.blocksJson);
+    }
+  } catch {}
+
+  let galleryImages: any[] | undefined = undefined;
+  try {
+    if (raw.galleryJson) {
+      galleryImages = JSON.parse(raw.galleryJson);
+    }
+  } catch {}
+
+  return {
+    id: raw.id,
+    slug: raw.slug,
+    title: raw.title,
+    subtitle: raw.subtitle ?? null,
+    category: raw.category,
+    author: raw.author,
+    authorRole: raw.authorRole ?? "Senior Fashion Critic",
+    publishedAt: raw.publishedAt ? new Date(raw.publishedAt) : new Date(),
+    heroImage: raw.heroImage,
+    heroImageAlt: raw.heroImageAlt ?? raw.title,
+    heroImageCaption: raw.heroImageCaption ?? null,
+    content: raw.content,
+    readingTime: raw.readingTime ?? "4 min read",
+    isFeatured: Boolean(raw.isFeatured),
+    isTrending: Boolean(raw.isTrending),
+    tags,
+    sourceUrl: raw.sourceUrl ?? null,
+    blocks,
+    galleryImages,
+    createdAt: raw.createdAt ? new Date(raw.createdAt) : undefined,
+  };
+}
+
+export function getAllNewsArticles(): NewsArticle[] {
+  try {
+    const rows = db
+      .select()
+      .from(newsArticles)
+      .orderBy(desc(newsArticles.publishedAt), desc(newsArticles.createdAt))
+      .all();
+    return rows.map(mapArticle);
+  } catch (err) {
+    console.error("Error fetching news articles:", err);
+    return [];
+  }
+}
+
+export function getNewsArticleBySlug(slug: string): NewsArticle | null {
+  try {
+    const row = db.select().from(newsArticles).where(eq(newsArticles.slug, slug)).get();
+    if (!row) return null;
+    return mapArticle(row);
+  } catch (err) {
+    console.error("Error fetching news article by slug:", err);
+    return null;
+  }
+}
+
+export function getFeaturedNewsArticle(): NewsArticle | null {
+  try {
+    const row = db
+      .select()
+      .from(newsArticles)
+      .where(eq(newsArticles.isFeatured, true))
+      .orderBy(desc(newsArticles.publishedAt))
+      .get();
+    if (row) return mapArticle(row);
+
+    const fallback = db
+      .select()
+      .from(newsArticles)
+      .orderBy(desc(newsArticles.publishedAt))
+      .get();
+    return fallback ? mapArticle(fallback) : null;
+  } catch (err) {
+    console.error("Error fetching featured news article:", err);
+    return null;
+  }
+}
+
+export function getTrendingNewsArticles(limit: number = 4): NewsArticle[] {
+  try {
+    const rows = db
+      .select()
+      .from(newsArticles)
+      .where(eq(newsArticles.isTrending, true))
+      .orderBy(desc(newsArticles.publishedAt))
+      .limit(limit)
+      .all();
+
+    if (rows.length >= limit) return rows.map(mapArticle);
+
+    // If not enough trending, fill with recent
+    const ids = rows.map((r) => r.id);
+    const fillRows = db
+      .select()
+      .from(newsArticles)
+      .where(eq(newsArticles.isFeatured, false))
+      .orderBy(desc(newsArticles.publishedAt))
+      .limit(limit)
+      .all();
+
+    const combined = [...rows];
+    for (const r of fillRows) {
+      if (!ids.includes(r.id) && combined.length < limit) {
+        combined.push(r);
+      }
+    }
+    return combined.map(mapArticle);
+  } catch (err) {
+    console.error("Error fetching trending news articles:", err);
+    return [];
+  }
+}
+
+export function getRelatedNewsArticles(currentSlug: string, category: string, limit: number = 3): NewsArticle[] {
+  try {
+    const rows = db
+      .select()
+      .from(newsArticles)
+      .where(and(ne(newsArticles.slug, currentSlug), eq(newsArticles.category, category)))
+      .orderBy(desc(newsArticles.publishedAt))
+      .limit(limit)
+      .all();
+
+    if (rows.length >= limit) return rows.map(mapArticle);
+
+    // Fallback: any other articles
+    const otherRows = db
+      .select()
+      .from(newsArticles)
+      .where(ne(newsArticles.slug, currentSlug))
+      .orderBy(desc(newsArticles.publishedAt))
+      .limit(limit)
+      .all();
+
+    return otherRows.map(mapArticle);
+  } catch (err) {
+    console.error("Error fetching related news:", err);
+    return [];
+  }
+}
+

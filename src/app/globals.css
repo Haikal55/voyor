@@ -42,6 +42,11 @@ a {
   font-family: var(--font-radiant), sans-serif !important;
 }
 
+.font-editorial,
+.font-serif {
+  font-family: var(--font-bodoni), "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
 .font-script,
 .font-script *,
 [data-font="script"] {

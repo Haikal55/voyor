@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  devIndicators: false,
   images: {
     remotePatterns: [
       {
@@ -11,6 +12,10 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "wallpapercave.com",
       },
     ],
   },
@@ -22,6 +27,50 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  async redirects() {
+    return [
+      {
+        source: "/bookappointment",
+        destination: "/book-appointment",
+        permanent: true,
+      },
+      {
+        source: "/id/en/bookappointment",
+        destination: "/book-appointment",
+        permanent: true,
+      },
+      {
+        source: "/terms",
+        destination: "/terms-and-conditions",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/id/en/cart",
+        destination: "/cart",
+        permanent: true,
+      },
+      {
+        source: "/id/en/cart/:path*",
+        destination: "/cart",
+        permanent: true,
+      },
+      {
+        source: "/id/en/login",
+        destination: "/login",
+        permanent: true,
+      },
+      {
+        source: "/id/en/login/:path*",
+        destination: "/login",
+        permanent: true,
+      },
+    ];
   },
 };
 

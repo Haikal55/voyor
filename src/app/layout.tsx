@@ -4,7 +4,14 @@ import "./globals.css";
 import { LuxuryProvider } from "@/context/luxury-context";
 import { Navbar } from "@/components/Navbar";
 import { CartDrawer } from "@/components/CartDrawer";
+import { CheckoutSidebar } from "@/components/CheckoutSidebar";
+import { MobileMenu } from "@/components/MobileMenu";
+import { getAllCategories, getAllProducts } from "@/lib/db/queries";
 import { Footer } from "@/components/Footer";
+import { SearchModal } from "@/components/SearchModal";
+import { CookiePreferencesModal } from "@/components/CookiePreferencesModal";
+import { SplashScreen } from "@/components/SplashScreen";
+import { NavigationProgressBar } from "@/components/NavigationProgressBar";
 import { getCartAction } from "./actions/cart";
 
 export const viewport: Viewport = {
@@ -14,7 +21,6 @@ export const viewport: Viewport = {
   themeColor: "#080808",
 };
 
-// Apple San Francisco Pro (SF Pro Display)
 const sfPro = localFont({
   src: [
     {
@@ -35,6 +41,7 @@ const sfPro = localFont({
   ],
   variable: "--font-sf-pro",
   display: "swap",
+  preload: false,
   fallback: [
     "-apple-system",
     "BlinkMacSystemFont",
@@ -47,7 +54,6 @@ const sfPro = localFont({
   ],
 });
 
-// Royal Luxury Cursive / Aksara Sambung (Local Calligraphy)
 const scriptFont = localFont({
   src: [
     {
@@ -58,22 +64,46 @@ const scriptFont = localFont({
   ],
   variable: "--font-script",
   display: "swap",
+  preload: false,
   fallback: ["Great Vibes", "Pinyon Script", "cursive"],
 });
 
+const radiantFont = localFont({
+  src: [
+    {
+      path: "../../public/fonts/RadiantRR-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-radiant",
+  display: "swap",
+  preload: false,
+  fallback: ["Radiant RR Bold", "Radiant RR", "OPTIRadiant-Bold", "sans-serif"],
+});
+
 export const metadata: Metadata = {
-  title: "VOYOR | Ultra-Luxury Fashion & Haute Couture Milano",
+  title: "VOYOR | Italian Haute Couture & Fashion Milano",
   description:
     "VOYOR Official Online Boutique. Discover the Fall/Winter 2026 Runway collection, iconic Barocco silk shirts, atelier evening gowns, and Sovereign leather bags.",
   keywords: [
     "VOYOR",
-    "Luxury Fashion",
     "Haute Couture",
     "Italian Fashion",
     "Milano Runway",
     "Barocco Silk",
-    "Luxury Handbags",
+    "Leather Handbags",
   ],
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default async function RootLayout({
@@ -86,19 +116,32 @@ export default async function RootLayout({
     const res = await getCartAction();
     initialCart = res.items;
   } catch (e) {
-    // Fallback gracefully
+
   }
+
+  const categories = getAllCategories();
+  const allProducts = getAllProducts();
 
   return (
     <html
       lang="en"
-      className={`${sfPro.variable} ${scriptFont.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${sfPro.variable} ${scriptFont.variable} ${radiantFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#080808] text-[#f5f4f0] selection:bg-[#a7c080] selection:text-black font-sans">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-[#080808] text-[#f5f4f0] selection:bg-[#a7c080] selection:text-black font-sans"
+      >
+        <NavigationProgressBar />
+        <SplashScreen />
         <LuxuryProvider initialCart={initialCart}>
           <Navbar />
+          <MobileMenu categories={categories} />
           <div className="flex-1">{children}</div>
           <CartDrawer />
+          <CheckoutSidebar />
+          <SearchModal allProducts={allProducts} />
+          <CookiePreferencesModal />
           <Footer />
         </LuxuryProvider>
       </body>

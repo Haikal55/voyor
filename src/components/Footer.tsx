@@ -2,11 +2,14 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Globe } from "lucide-react";
+import { useLuxury } from "@/context/luxury-context";
+import { CurrencyCode } from "@/lib/types";
 
 export function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const { currency, setCurrency, setIsCookieModalOpen } = useLuxury();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,10 +22,9 @@ export function Footer() {
   return (
     <footer className="bg-[#050505] text-neutral-400 border-t border-[#1a1a1a] pt-16 pb-12 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* VIP Newsletter */}
         <div className="pb-16 border-b border-[#1c1c1c] max-w-xl mx-auto text-center space-y-4">
           <span className="text-sm uppercase tracking-ultra text-[#a7c080]">
-            VOYOR Privé Salon
+            <span className="font-radiant font-bold tracking-[0.2em]">VOYOR</span> Privé Salon
           </span>
           <h3 className="text-2xl sm:text-3xl text-white font-medium">
             Receive Private Runway Invitations
@@ -35,7 +37,7 @@ export function Footer() {
             <input
               type="email"
               required
-              placeholder="Enter your VIP email address"
+              placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="flex-1 bg-[#111] border border-[#282828] border-r-0 px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-[#a7c080] text-xs"
@@ -55,7 +57,6 @@ export function Footer() {
           )}
         </div>
 
-        {/* Footer Navigation Columns */}
         <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h4 className="text-white uppercase tracking-luxury font-semibold text-[11px] mb-4">
@@ -63,27 +64,32 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-[11px]">
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/login" className="hover:text-[#a7c080] transition-colors">
+                  Sign In / My Account
+                </Link>
+              </li>
+              <li>
+                <Link href="/book-appointment" className="hover:text-[#a7c080] transition-colors">
                   Book Boutique Appointment
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
-                  VIP White-Glove Delivery
+                <Link href="/terms-and-conditions" className="hover:text-[#a7c080] transition-colors">
+                  White-Glove Delivery
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/terms-and-conditions" className="hover:text-[#a7c080] transition-colors">
                   Returns & Exchanges
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/terms-and-conditions" className="hover:text-[#a7c080] transition-colors">
                   Authenticity Verification
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/book-appointment" className="hover:text-[#a7c080] transition-colors">
                   Garment Restoration & Care
                 </Link>
               </li>
@@ -102,17 +108,27 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/category/women" className="hover:text-[#a7c080] transition-colors">
-                  Women&apos;s Evening Gowns
+                  Women&apos;s Collection
                 </Link>
               </li>
               <li>
                 <Link href="/category/men" className="hover:text-[#a7c080] transition-colors">
-                  Men&apos;s Tailoring & Silks
+                  Men&apos;s Collection
                 </Link>
               </li>
               <li>
-                <Link href="/category/accessories" className="hover:text-[#a7c080] transition-colors">
-                  Sovereign Leather Bags
+                <Link href="/category/leather-goods" className="hover:text-[#a7c080] transition-colors">
+                  Leather Goods & Bags
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/shoes" className="hover:text-[#a7c080] transition-colors">
+                  Shoes, Socks & Footwear
+                </Link>
+              </li>
+              <li>
+                <Link href="/category/jewelry" className="hover:text-[#a7c080] transition-colors">
+                  Fashion Jewelry & Jewels
                 </Link>
               </li>
               <li>
@@ -129,22 +145,22 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-[11px]">
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/#section-legacy" className="hover:text-[#a7c080] transition-colors">
                   Atelier Heritage
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/#section-legacy" className="hover:text-[#a7c080] transition-colors">
                   Sustainability & Silk Origins
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/book-appointment" className="hover:text-[#a7c080] transition-colors">
                   Global Flagship Stores
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-[#a7c080] transition-colors">
+                <Link href="/category/runway-couture" className="hover:text-[#a7c080] transition-colors">
                   Press & Editorial
                 </Link>
               </li>
@@ -161,20 +177,41 @@ export function Footer() {
               Madison Avenue 650, New York, NY
             </p>
             <span className="text-[#a7c080] text-[10px] uppercase tracking-wider block font-medium">
-              Private Client Concierge: vip@voyor.com
+              Private Client Concierge: concierge@voyor.com
             </span>
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#1c1c1c] flex flex-col md:flex-row items-center justify-between text-[10px] uppercase tracking-luxury text-neutral-500 gap-4">
-          <div>
-            © 2026 VOYOR S.P.A. MILANO • ALL RIGHTS RESERVED.
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <div>
+              © 2026 <span className="font-radiant font-bold tracking-[0.15em] text-neutral-300">VOYOR</span> S.P.A. MILANO • ALL RIGHTS RESERVED.
+            </div>
+            <div className="flex items-center space-x-2 pl-0 sm:pl-3 sm:border-l border-[#222]">
+              <Globe className="w-3.5 h-3.5 text-[#a7c080]" />
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
+                className="bg-[#111111] border border-[#2a2a2a] text-neutral-300 text-[10px] px-2 py-1 rounded outline-none focus:border-[#a7c080] cursor-pointer"
+                aria-label="Select currency and region"
+              >
+                <option value="IDR">Indonesia — IDR (Rp)</option>
+                <option value="EUR">Italy / Europe — EUR (€)</option>
+                <option value="USD">United States — USD ($)</option>
+                <option value="GBP">United Kingdom — GBP (£)</option>
+              </select>
+            </div>
           </div>
           <div className="flex space-x-6">
-            <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Legal Terms</Link>
-            <Link href="#" className="hover:text-white transition-colors">Cookie Preferences</Link>
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Legal Terms</Link>
+            <button
+              type="button"
+              onClick={() => setIsCookieModalOpen(true)}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
+              Cookie Preferences
+            </button>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-# VOYOR | Ultra-Luxury Fashion & Haute Couture
+# VOYOR | Haute Couture & Italian Fashion
 
-An ultra-luxury fashion e-commerce platform inspired by the visual grandeur, editorial storytelling, and architecture of **Versace** (`versace.com`).
+A fashion e-commerce platform inspired by the visual grandeur, editorial storytelling, and architecture of **Versace** (`versace.com`).
 
 ---
 
@@ -19,10 +19,10 @@ An ultra-luxury fashion e-commerce platform inspired by the visual grandeur, edi
 1. **Cinematic Runway Experience:**
    * Full-bleed editorial campaign hero with Milano Fashion Week FW26 aesthetics.
    * Asymmetrical lookbook grids with hover image reveal (campaign vs. studio shots).
-2. **Interactive Luxury Bag & Checkout:**
+2. **Interactive Bag & Checkout:**
    * Slide-out shopping bag (`CartDrawer`) with quantity adjustment.
-   * Dynamic progress bar towards Complimentary Global VIP Courier.
-   * In-drawer frictionless VIP checkout simulation that writes directly to the SQLite `orders` table and returns a unique Italian luxury order number (`VY-XXXXXX-XXX`).
+   * Dedicated shopping bag page (`/cart`).
+   * Frictionless checkout sidebar simulation that writes directly to the SQLite `orders` table and returns a unique Italian luxury order number (`VY-XXXXXX-XXX`).
 3. **Maison Heritage & Craftsmanship:**
    * Editorial storytelling section honoring Italian silk mills in Como, leather artisans in Florence, and 24K gold hardware plating.
 4. **Universal Search:**

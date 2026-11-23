@@ -14,7 +14,49 @@ export function getAllCategories(): Category[] {
 
 export function getAllProducts(): Product[] {
   const allProds = db.select().from(products).orderBy(desc(products.isRunway), desc(products.createdAt)).all();
-  return allProds.map(attachImagesAndVariants);
+  if (allProds.length === 0) return [];
+
+  const allImgs = db.select().from(productImages).orderBy(desc(productImages.isPrimary), asc(productImages.displayOrder)).all();
+  const allVars = db.select().from(productVariants).all();
+
+  const imgsByProdId = new Map<string, typeof allImgs>();
+  for (const img of allImgs) {
+    let list = imgsByProdId.get(img.productId);
+    if (!list) {
+      list = [];
+      imgsByProdId.set(img.productId, list);
+    }
+    list.push(img);
+  }
+
+  const varsByProdId = new Map<string, typeof allVars>();
+  for (const v of allVars) {
+    let list = varsByProdId.get(v.productId);
+    if (!list) {
+      list = [];
+      varsByProdId.set(v.productId, list);
+    }
+    list.push(v);
+  }
+
+  return allProds.map((prod) => ({
+    ...prod,
+    currency: prod.currency ?? "USD",
+    isNew: Boolean(prod.isNew),
+    isBestseller: Boolean(prod.isBestseller),
+    isRunway: Boolean(prod.isRunway),
+    origin: prod.origin ?? "Made in Italy",
+    images: (imgsByProdId.get(prod.id) || []).map((img) => ({
+      ...img,
+      isPrimary: Boolean(img.isPrimary),
+      displayOrder: img.displayOrder ?? 0,
+    })),
+    variants: (varsByProdId.get(prod.id) || []).map((v) => ({
+      ...v,
+      stockQuantity: v.stockQuantity ?? 10,
+      priceDelta: v.priceDelta ?? 0,
+    })),
+  }));
 }
 
 export function getProductBySlug(slug: string): Product | null {
@@ -24,7 +66,20 @@ export function getProductBySlug(slug: string): Product | null {
 }
 
 export function getProductsByCategory(categorySlug: string): { category: Category | null; products: Product[] } {
-  const cat = db.select().from(categories).where(eq(categories.slug, categorySlug)).get();
+
+  const resolvedSlug =
+    categorySlug === "accessories"
+      ? "leather-goods"
+      : categorySlug === "shoes-footwear"
+      ? "shoes"
+      : categorySlug === "jewels" || categorySlug === "jewellery"
+      ? "jewelry"
+      : categorySlug;
+
+  const cat =
+    db.select().from(categories).where(eq(categories.slug, resolvedSlug)).get() ||
+    db.select().from(categories).where(eq(categories.slug, categorySlug)).get();
+
   if (!cat) return { category: null, products: [] };
 
   const prods =
@@ -36,13 +91,67 @@ export function getProductsByCategory(categorySlug: string): { category: Categor
           .all()
       : db.select().from(products).where(eq(products.categoryId, cat.id)).all();
 
+  if (prods.length === 0) {
+    return {
+      category: {
+        ...cat,
+        isFeatured: Boolean(cat.isFeatured),
+        displayOrder: cat.displayOrder ?? 0,
+      },
+      products: [],
+    };
+  }
+
+  const prodIds = new Set(prods.map((p) => p.id));
+  const allImgs = db.select().from(productImages).orderBy(desc(productImages.isPrimary), asc(productImages.displayOrder)).all();
+  const allVars = db.select().from(productVariants).all();
+
+  const imgsByProdId = new Map<string, typeof allImgs>();
+  for (const img of allImgs) {
+    if (!prodIds.has(img.productId)) continue;
+    let list = imgsByProdId.get(img.productId);
+    if (!list) {
+      list = [];
+      imgsByProdId.set(img.productId, list);
+    }
+    list.push(img);
+  }
+
+  const varsByProdId = new Map<string, typeof allVars>();
+  for (const v of allVars) {
+    if (!prodIds.has(v.productId)) continue;
+    let list = varsByProdId.get(v.productId);
+    if (!list) {
+      list = [];
+      varsByProdId.set(v.productId, list);
+    }
+    list.push(v);
+  }
+
   return {
     category: {
       ...cat,
       isFeatured: Boolean(cat.isFeatured),
       displayOrder: cat.displayOrder ?? 0,
     },
-    products: prods.map(attachImagesAndVariants),
+    products: prods.map((prod) => ({
+      ...prod,
+      currency: prod.currency ?? "USD",
+      isNew: Boolean(prod.isNew),
+      isBestseller: Boolean(prod.isBestseller),
+      isRunway: Boolean(prod.isRunway),
+      origin: prod.origin ?? "Made in Italy",
+      images: (imgsByProdId.get(prod.id) || []).map((img) => ({
+        ...img,
+        isPrimary: Boolean(img.isPrimary),
+        displayOrder: img.displayOrder ?? 0,
+      })),
+      variants: (varsByProdId.get(prod.id) || []).map((v) => ({
+        ...v,
+        stockQuantity: v.stockQuantity ?? 10,
+        priceDelta: v.priceDelta ?? 0,
+      })),
+    })),
   };
 }
 
@@ -98,12 +207,17 @@ export function getCartItemsDetailed(sessionId: string): CartItemDetailed[] {
     const prod = db.select().from(products).where(eq(products.id, variant.productId)).get();
     if (!prod) continue;
 
-    const primaryImg = db
+    const allImgs = db
       .select()
       .from(productImages)
       .where(eq(productImages.productId, prod.id))
       .orderBy(desc(productImages.isPrimary))
-      .get();
+      .all();
+
+    const matchingColorImg = variant.colorName
+      ? allImgs.find((img) => img.colorName && img.colorName.toLowerCase() === variant.colorName.toLowerCase())
+      : null;
+    const itemImg = matchingColorImg ?? allImgs[0];
 
     detailed.push({
       id: item.id,
@@ -119,7 +233,7 @@ export function getCartItemsDetailed(sessionId: string): CartItemDetailed[] {
         name: prod.name,
         subtitle: prod.subtitle,
         basePrice: prod.basePrice,
-        image: primaryImg?.url ?? "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=600",
+        image: itemImg?.url ?? "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=600",
       },
     });
   }

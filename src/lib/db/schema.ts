@@ -19,15 +19,15 @@ export const products = sqliteTable("products", {
   categoryId: text("category_id")
     .notNull()
     .references(() => categories.id),
-  basePrice: real("base_price").notNull(), // stored in USD
+  basePrice: real("base_price").notNull(),
   compareAtPrice: real("compare_at_price"),
   currency: text("currency").default("USD"),
   isNew: integer("is_new", { mode: "boolean" }).default(false),
   isBestseller: integer("is_bestseller", { mode: "boolean" }).default(false),
   isRunway: integer("is_runway", { mode: "boolean" }).default(false),
-  composition: text("composition"), // e.g. "100% Mulberry Silk Twill"
+  composition: text("composition"),
   origin: text("origin").default("Made in Italy"),
-  detailsJson: text("details_json"), // JSON string array of bullet points
+  detailsJson: text("details_json"),
   careGuide: text("care_guide"),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
 });
@@ -39,6 +39,7 @@ export const productImages = sqliteTable("product_images", {
     .references(() => products.id),
   url: text("url").notNull(),
   alt: text("alt").notNull(),
+  colorName: text("color_name"),
   isPrimary: integer("is_primary", { mode: "boolean" }).default(false),
   displayOrder: integer("display_order").default(0),
 });
@@ -48,9 +49,9 @@ export const productVariants = sqliteTable("product_variants", {
   productId: text("product_id")
     .notNull()
     .references(() => products.id),
-  size: text("size").notNull(), // e.g. "IT 40", "IT 42", "IT 44" or "S", "M", "L"
-  colorName: text("color_name").notNull(), // e.g. "Nero & Oro Barocco", "Deep Emerald"
-  colorHex: text("color_hex").notNull(), // e.g. "#000000", "#1b4d3e"
+  size: text("size").notNull(),
+  colorName: text("color_name").notNull(),
+  colorHex: text("color_hex").notNull(),
   sku: text("sku").notNull().unique(),
   stockQuantity: integer("stock_quantity").default(10),
   priceDelta: real("price_delta").default(0),
@@ -73,8 +74,93 @@ export const orders = sqliteTable("orders", {
   customerName: text("customer_name").notNull(),
   totalAmount: real("total_amount").notNull(),
   currency: text("currency").default("USD"),
-  status: text("status").default("confirmed"), // pending, confirmed, dispatched, delivered
+  status: text("status").default("confirmed"),
   shippingAddress: text("shipping_address").notNull(),
   itemsJson: text("items_json").notNull(),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});
+
+export const users = sqliteTable("users", {
+  id: text("id").primaryKey(),
+  email: text("email").notNull().unique(),
+  passwordHash: text("password_hash").notNull(),
+  title: text("title").default("Mr."),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
+  country: text("country").default("Indonesia"),
+  phone: text("phone"),
+  role: text("role").default("client"),
+  failedAttempts: integer("failed_attempts").default(0),
+  lockoutUntil: integer("lockout_until"),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});
+
+export const userSessions = sqliteTable("user_sessions", {
+  id: text("id").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  sessionTokenHash: text("session_token_hash").notNull().unique(),
+  ipAddress: text("ip_address"),
+  userAgent: text("user_agent"),
+  expiresAt: integer("expires_at", { mode: "timestamp" }).notNull(),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});
+
+export const authRateLimits = sqliteTable("auth_rate_limits", {
+  id: text("id").primaryKey(),
+  key: text("key").notNull().unique(),
+  attempts: integer("attempts").default(1),
+  firstAttemptAt: integer("first_attempt_at").notNull(),
+  lastAttemptAt: integer("last_attempt_at").notNull(),
+});
+
+export const userWishlists = sqliteTable("user_wishlists", {
+  id: text("id").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  productId: text("product_id")
+    .notNull()
+    .references(() => products.id),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});
+
+export const userAddresses = sqliteTable("user_addresses", {
+  id: text("id").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  label: text("label").default("Residence"),
+  recipientName: text("recipient_name").notNull(),
+  phone: text("phone").notNull(),
+  streetAddress: text("street_address").notNull(),
+  suite: text("suite"),
+  city: text("city").notNull(),
+  postalCode: text("postal_code").notNull(),
+  country: text("country").notNull(),
+  isDefault: integer("is_default", { mode: "boolean" }).default(false),
+  createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});
+
+export const userAppointments = sqliteTable("user_appointments", {
+  id: text("id").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  referenceCode: text("reference_code").notNull().unique(),
+  boutiqueName: text("boutique_name").notNull(),
+  boutiqueCity: text("boutique_city").notNull(),
+  boutiqueAddress: text("boutique_address").notNull(),
+  appointmentType: text("appointment_type").notNull(),
+  serviceType: text("service_type").default("Haute Couture Styling"),
+  date: text("date").notNull(),
+  timeSlot: text("time_slot").notNull(),
+  clientName: text("client_name").notNull(),
+  clientEmail: text("client_email").notNull(),
+  clientPhone: text("client_phone").notNull(),
+  notes: text("notes"),
+  status: text("status").default("Confirmed"),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
 });

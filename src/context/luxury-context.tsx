@@ -23,8 +23,14 @@ interface LuxuryContextType {
   cart: CartItemDetailed[];
   isCartOpen: boolean;
   setIsCartOpen: (open: boolean) => void;
+  isCheckoutOpen: boolean;
+  setIsCheckoutOpen: (open: boolean) => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (open: boolean) => void;
   isSearchOpen: boolean;
   setIsSearchOpen: (open: boolean) => void;
+  isCookieModalOpen: boolean;
+  setIsCookieModalOpen: (open: boolean) => void;
   isLoadingCart: boolean;
   addToCart: (variantId: string, quantity?: number) => Promise<void>;
   updateQuantity: (cartItemId: string, quantity: number) => Promise<void>;
@@ -47,10 +53,12 @@ export function LuxuryProvider({
   const [currency, setCurrencyState] = useState<CurrencyCode>("IDR");
   const [cart, setCart] = useState<CartItemDetailed[]>(initialCart);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isCookieModalOpen, setIsCookieModalOpen] = useState(false);
   const [isLoadingCart, setIsLoadingCart] = useState(false);
 
-  // Auto-detect country & currency based on user location/timezone
   useEffect(() => {
     const detected = detectUserCountry();
     try {
@@ -117,26 +125,32 @@ export function LuxuryProvider({
   };
 
   const updateQuantity = async (cartItemId: string, quantity: number) => {
+    if (quantity <= 0) {
+      setCart((prev) => prev.filter((item) => item.id !== cartItemId));
+    } else {
+      setCart((prev) =>
+        prev.map((item) => (item.id === cartItemId ? { ...item, quantity } : item))
+      );
+    }
+
     try {
-      setIsLoadingCart(true);
       const updated = await updateCartItemQuantityAction(cartItemId, quantity);
       setCart(updated);
     } catch (e) {
       console.error("Failed to update quantity", e);
-    } finally {
-      setIsLoadingCart(false);
+      refreshCart();
     }
   };
 
   const removeItem = async (cartItemId: string) => {
+    setCart((prev) => prev.filter((item) => item.id !== cartItemId));
+
     try {
-      setIsLoadingCart(true);
       const updated = await removeCartItemAction(cartItemId);
       setCart(updated);
     } catch (e) {
       console.error("Failed to remove item", e);
-    } finally {
-      setIsLoadingCart(false);
+      refreshCart();
     }
   };
 
@@ -156,8 +170,14 @@ export function LuxuryProvider({
         cart,
         isCartOpen,
         setIsCartOpen,
+        isCheckoutOpen,
+        setIsCheckoutOpen,
+        isMenuOpen,
+        setIsMenuOpen,
         isSearchOpen,
         setIsSearchOpen,
+        isCookieModalOpen,
+        setIsCookieModalOpen,
         isLoadingCart,
         addToCart,
         updateQuantity,

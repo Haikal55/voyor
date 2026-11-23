@@ -15,10 +15,8 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group relative flex flex-col luxury-card-hover">
-      {/* Image Container */}
       <div className="relative aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#1f1f1f] group-hover:border-[#a7c080]/40 transition-colors duration-300">
-        <Link href={`/product/${product.slug}`} className="block w-full h-full relative">
-          {/* Primary Product Image (Instant swap, no fade) */}
+        <Link href={`/product/${product.slug}`} prefetch={true} className="block w-full h-full relative">
           {primaryImage && (
             <Image
               src={primaryImage.url}
@@ -29,7 +27,6 @@ export function ProductCard({ product }: { product: Product }) {
             />
           )}
 
-          {/* Secondary Product Image (Instant on hover, no fade) */}
           {hasSecondary && (
             <Image
               src={secondaryImage.url}
@@ -42,20 +39,23 @@ export function ProductCard({ product }: { product: Product }) {
         </Link>
       </div>
 
-      {/* Product Details */}
       <div className="pt-4 flex flex-col flex-1 justify-between space-y-1.5">
         <div>
-          {product.subtitle && (
+          {product.subtitle && !product.subtitle.toLowerCase().includes("versace atelier") && (
             <span className="text-[10px] uppercase tracking-luxury text-neutral-400 block truncate">
               {product.subtitle}
             </span>
           )}
-          <h3 className="text-[13px] sm:text-sm font-normal text-white hover:text-[#a7c080] transition-colors line-clamp-1 mt-0.5">
-            <Link href={`/product/${product.slug}`}>{product.name}</Link>
+          <h3 className="text-[13px] sm:text-sm font-normal text-white hover:text-[#a7c080] transition-colors line-clamp-1">
+            <Link href={`/product/${product.slug}`} prefetch={true}>
+              {product.name}
+            </Link>
           </h3>
-          <p className="text-[11px] text-neutral-400 line-clamp-1 mt-0.5 font-light">
-            {product.composition || product.origin}
-          </p>
+          {product.composition && !product.composition.toLowerCase().includes("authentic italian") && (
+            <p className="text-[11px] text-neutral-400 line-clamp-1 mt-0.5 font-light">
+              {product.composition}
+            </p>
+          )}
         </div>
 
         <div className="pt-2 flex items-baseline justify-between border-t border-[#1a1a1a]">

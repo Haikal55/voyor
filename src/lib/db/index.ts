@@ -5,7 +5,6 @@ import path from "path";
 
 const dbPath = process.env.DATABASE_URL || path.join(process.cwd(), "voyor.db");
 
-// Singleton connection for Next.js development HMR
 const globalForDb = globalThis as unknown as {
   sqlite: Database.Database | undefined;
 };
@@ -20,7 +19,6 @@ if (process.env.NODE_ENV !== "production") {
   globalForDb.sqlite = sqlite;
 }
 
-// Enable SQLite WAL mode for concurrency and performance
 try {
   sqlite.pragma("journal_mode = WAL");
   sqlite.pragma("foreign_keys = ON");

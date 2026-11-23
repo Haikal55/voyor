@@ -11,9 +11,15 @@
 :root {
   --background: #080808;
   --foreground: #f5f4f0;
+  --header-offset: 4.75rem;
 }
 
-/* Default Base Typography: Apple San Francisco (Pure Sans-Serif) */
+@media (max-width: 639px) {
+  :root {
+    --header-offset: 4.25rem;
+  }
+}
+
 html,
 body,
 button,
@@ -32,27 +38,14 @@ a {
   font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", -apple-system-headline, "Helvetica Neue", Arial, sans-serif;
 }
 
-@font-face {
-  font-family: 'VoyorScript';
-  src: url('/fonts/GreatVibes-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+.font-radiant {
+  font-family: var(--font-radiant), sans-serif !important;
 }
 
-@font-face {
-  font-family: 'VoyorPinyon';
-  src: url('/fonts/PinyonScript-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Haute Couture Script / Aksara Sambung (Cursive Luxury) */
 .font-script,
 .font-script *,
 [data-font="script"] {
-  font-family: var(--font-script), 'VoyorScript', 'Great Vibes', 'VoyorPinyon', 'Pinyon Script', cursive !important;
+  font-family: var(--font-script), cursive !important;
   font-style: normal !important;
   text-transform: none !important;
   letter-spacing: 0.02em !important;
@@ -66,9 +59,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* Tracking utilities for high-fashion sans-serif */
 .tracking-luxury {
   letter-spacing: 0.12em;
 }
@@ -89,17 +82,126 @@ body {
   transition: border-color 0.3s ease;
 }
 
-/* Custom luxury scrollbar */
+.fixed-header {
+  padding-top: env(safe-area-inset-top);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
-::-webkit-scrollbar-track {
-  background: #080808;
+
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
 }
-::-webkit-scrollbar-thumb {
-  background: #222222;
-  border-radius: 2px;
+
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
-::-webkit-scrollbar-thumb:hover {
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+.scrollbar-none {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+@keyframes soundbar {
+  0%, 100% {
+    height: 3px;
+  }
+  50% {
+    height: 15px;
+  }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
   background: #a7c080;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(167, 192, 128, 0.6);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #a7c080;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 6px rgba(167, 192, 128, 0.6);
+}
+
+@keyframes evergreenBreathe {
+  0%, 100% {
+    transform: scale(0.97);
+    filter: drop-shadow(0 0 14px rgba(167, 192, 128, 0.25));
+  }
+  50% {
+    transform: scale(1.025);
+    filter: drop-shadow(0 0 36px rgba(167, 192, 128, 0.55));
+  }
+}
+
+@keyframes slowOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes luxuryShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-evergreen-breathe {
+  animation: evergreenBreathe 3.2s ease-in-out infinite;
+}
+
+.animate-slow-orbit {
+  animation: slowOrbit 60s linear infinite;
+}
+
+.animate-luxury-shimmer {
+  animation: luxuryShimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }

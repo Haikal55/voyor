@@ -6,6 +6,8 @@ import { cartItems, orders, productVariants, products } from "@/lib/db/schema";
 import { eq, and } from "drizzle-orm";
 import { getCartItemsDetailed } from "@/lib/db/queries";
 import { revalidatePath } from "next/cache";
+import { getCurrentUserAction } from "@/app/actions/auth";
+import { getUserAddressesAction } from "@/app/actions/account";
 
 const SESSION_COOKIE_NAME = "voyor_cart_session";
 
@@ -19,7 +21,7 @@ async function getOrCreateSessionId(): Promise<string> {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 30, // 30 days
+    maxAge: 60 * 60 * 24 * 30,
     path: "/",
   });
   return newId;
@@ -34,7 +36,6 @@ export async function getCartAction() {
 export async function addToCartAction(variantId: string, quantity = 1) {
   const sessionId = await getOrCreateSessionId();
 
-  // Check if variant already in cart for this session
   const existing = db
     .select()
     .from(cartItems)
@@ -85,6 +86,33 @@ export async function removeCartItemAction(cartItemId: string) {
   return getCartItemsDetailed(sessionId);
 }
 
+export async function getCheckoutInitialDataAction() {
+  const user = await getCurrentUserAction();
+  if (!user) {
+    return {
+      isLoggedIn: false,
+      user: null,
+      savedAddresses: [],
+    };
+  }
+
+  const addresses = await getUserAddressesAction();
+
+  return {
+    isLoggedIn: true,
+    user: {
+      id: user.id,
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      fullName: `${user.title ? user.title + " " : ""}${user.firstName} ${user.lastName}`.trim(),
+      phone: user.phone || "",
+      country: user.country || "Indonesia",
+    },
+    savedAddresses: addresses || [],
+  };
+}
+
 export async function checkoutOrderAction(data: {
   customerName: string;
   customerEmail: string;
@@ -98,6 +126,15 @@ export async function checkoutOrderAction(data: {
     throw new Error("Bag is empty");
   }
 
+  const currentUser = await getCurrentUserAction();
+  const resolvedEmail = currentUser
+    ? currentUser.email.toLowerCase().trim()
+    : (data.customerEmail ? data.customerEmail.toLowerCase().trim() : "client@voyor.com");
+
+  const resolvedName = (data.customerName && data.customerName.trim().length > 0)
+    ? data.customerName.trim()
+    : (currentUser ? `${currentUser.firstName} ${currentUser.lastName}` : "Client");
+
   const totalAmount = items.reduce((sum, item) => {
     return sum + (item.product.basePrice + item.variant.priceDelta) * item.quantity;
   }, 0);
@@ -108,8 +145,8 @@ export async function checkoutOrderAction(data: {
     .values({
       id: `ord_${Date.now()}`,
       orderNumber,
-      customerEmail: data.customerEmail,
-      customerName: data.customerName,
+      customerEmail: resolvedEmail,
+      customerName: resolvedName,
       totalAmount,
       currency: data.currency,
       status: "confirmed",
@@ -118,15 +155,19 @@ export async function checkoutOrderAction(data: {
     })
     .run();
 
-  // Clear cart
   db.delete(cartItems).where(eq(cartItems.sessionId, sessionId)).run();
 
   revalidatePath("/");
+  revalidatePath("/cart");
+  revalidatePath("/account");
+
   return {
     success: true,
     orderNumber,
     totalAmount,
     currency: data.currency,
-    customerName: data.customerName,
+    customerName: resolvedName,
+    customerEmail: resolvedEmail,
+    shippingAddress: data.shippingAddress,
   };
 }

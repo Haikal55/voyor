@@ -12,7 +12,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
   const { isSearchOpen, setIsSearchOpen, currency } = useLuxury();
   const [query, setQuery] = useState("");
 
-  // Lock scroll when search modal is open
   useEffect(() => {
     if (isSearchOpen) {
       document.body.style.overflow = "hidden";
@@ -39,7 +38,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 overflow-y-auto">
-        {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -48,7 +46,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
           className="fixed inset-0 bg-black/90 backdrop-blur-md"
         />
 
-        {/* Modal Dialog Content */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +55,7 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
         >
           <div className="flex justify-between items-center pb-6 border-b border-[#282828]">
             <span className="text-sm uppercase tracking-ultra text-[#a7c080]">
-              VOYOR Maison Search
+              <span className="font-radiant font-bold tracking-[0.2em]">VOYOR</span> Maison Search
             </span>
             <button
               onClick={() => setIsSearchOpen(false)}
@@ -69,7 +66,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
             </button>
           </div>
 
-          {/* Search Input */}
           <div className="relative mt-8">
             <Search className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 text-[#a7c080]" />
             <input
@@ -82,7 +78,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
             />
           </div>
 
-          {/* Quick Collections suggestions */}
           <div className="mt-6 flex flex-wrap gap-2 text-xs uppercase tracking-wider text-neutral-400">
             <span className="text-[#888] py-1">Popular:</span>
             {["Barocco Silk", "Runway FW26", "Atelier Evening Gown", "Palazzo Bags", "Extrait De Parfum"].map(
@@ -98,7 +93,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
             )}
           </div>
 
-          {/* Results */}
           <div className="mt-12">
             <h3 className="text-xs uppercase tracking-widest text-[#888] mb-6">
               {query.trim() ? `Search Results (${filtered.length})` : "Curated Highlights"}

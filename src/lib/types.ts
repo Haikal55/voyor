@@ -33,7 +33,6 @@ export function detectUserCountry(): CountryConfig {
     return COUNTRIES.ID;
   }
 
-  // Check saved preference
   try {
     const saved = localStorage.getItem("voyor_country");
     if (saved && COUNTRIES[saved]) {
@@ -41,7 +40,6 @@ export function detectUserCountry(): CountryConfig {
     }
   } catch {}
 
-  // Detect via Timezone
   try {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
     if (
@@ -75,7 +73,6 @@ export function detectUserCountry(): CountryConfig {
     }
   } catch {}
 
-  // Detect via browser languages
   try {
     const langs = navigator.languages || [navigator.language];
     for (const l of langs) {
@@ -128,6 +125,7 @@ export interface ProductImage {
   productId: string;
   url: string;
   alt: string;
+  colorName?: string | null;
   isPrimary: boolean;
   displayOrder: number;
 }

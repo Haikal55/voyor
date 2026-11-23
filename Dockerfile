@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for VOYOR Ultra-Luxury E-Commerce
+# Multi-stage Dockerfile for VOYOR E-Commerce
 # 100% Free, Standalone, Self-Hostable on any VPS, Docker, Coolify, or Cloud
 
 FROM node:20-alpine AS base

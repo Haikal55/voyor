@@ -1,29 +1,91 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowDown } from "lucide-react";
+import { Volume2, VolumeX, Maximize2, Minimize2 } from "lucide-react";
 
 export function HeroBanner() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const [isMuted, setIsMuted] = useState(true);
+  const [volume, setVolume] = useState(0.75);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    const nextMuted = !isMuted;
+    videoRef.current.muted = nextMuted;
+    setIsMuted(nextMuted);
+
+    if (!nextMuted) {
+      videoRef.current.volume = volume;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = parseFloat(e.target.value);
+    setVolume(val);
+    if (!videoRef.current) return;
+
+    videoRef.current.volume = val;
+    if (val === 0) {
+      videoRef.current.muted = true;
+      setIsMuted(true);
+    } else if (isMuted) {
+      videoRef.current.muted = false;
+      setIsMuted(false);
+    }
+  };
+
+  const toggleFullscreen = () => {
+    if (!videoRef.current) return;
+    const video = videoRef.current;
+
+    if (!document.fullscreenElement) {
+      if (video.requestFullscreen) {
+        video.requestFullscreen().catch((err) => console.warn(err));
+      } else if ((video as any).webkitRequestFullscreen) {
+        (video as any).webkitRequestFullscreen();
+      } else if ((video as any).webkitEnterFullscreen) {
+        (video as any).webkitEnterFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch((err) => console.warn(err));
+      }
+    }
+  };
+
   return (
     <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex items-center justify-center overflow-hidden bg-black pt-16 sm:pt-24 pb-20 px-4 sm:px-6">
-      {/* Background Hero Image */}
-      <div className="absolute inset-0 pointer-events-none">
-        <Image
-          src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=85&w=2200&auto=format&fit=crop"
-          alt="VOYOR Fall/Winter 2026 Runway Campaign"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-top opacity-60"
-        />
-        {/* Multilayered Editorial Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/40 to-black/70" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/30 to-black/90" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          preload="metadata"
+          className="w-full h-full object-cover object-center opacity-65 pointer-events-auto"
+          poster="/images/categories/category-runway-versace.jpg"
+        >
+          <source src="/videos/runway-hero-loop.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/30 to-black/90 pointer-events-none" />
       </div>
 
-      {/* Floating Center Editorial Title */}
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
         <h1 className="font-script text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] text-white font-normal tracking-wide leading-[1.1] drop-shadow-2xl select-none">
           Fearless <span className="text-[#a7c080]">Opulence</span>
@@ -33,33 +95,64 @@ export function HeroBanner() {
           The new chapter of the VOYOR Maison. Sculpted tailoring, liquid mulberry silks, and iconic 24-karat gold Barocco hardware.
         </p>
 
-        {/* Hero CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
+        <div className="flex items-center justify-center pt-4">
           <Link
             href="/category/runway-couture"
             className="w-full sm:w-auto px-8 py-3.5 bg-[#a7c080] hover:bg-[#8da866] text-black text-xs uppercase tracking-luxury font-semibold transition-all shadow-lg text-center"
           >
             Explore The Runway
           </Link>
-          <Link
-            href="/category/women"
-            className="w-full sm:w-auto px-8 py-3.5 bg-black/70 hover:bg-black/90 border border-white/20 hover:border-[#a7c080] text-white text-xs uppercase tracking-luxury font-normal transition-all text-center backdrop-blur-sm"
-          >
-            Discover Women
-          </Link>
-          <Link
-            href="/category/men"
-            className="w-full sm:w-auto px-8 py-3.5 bg-black/70 hover:bg-black/90 border border-white/20 hover:border-[#a7c080] text-white text-xs uppercase tracking-luxury font-normal transition-all text-center backdrop-blur-sm"
-          >
-            Discover Men
-          </Link>
         </div>
       </div>
 
-      {/* Scroll Down Prompt */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1 text-neutral-400 text-[10px] uppercase tracking-luxury animate-bounce pointer-events-none">
-        <span>Scroll Down</span>
-        <ArrowDown className="w-3.5 h-3.5 text-[#a7c080]" />
+      <div className="absolute bottom-10 sm:bottom-12 left-6 sm:left-8 z-20 flex items-center space-x-3.5">
+        <div className="group/audio relative flex items-center">
+          <button
+            onClick={toggleMute}
+            aria-label={isMuted ? "Unmute video sound" : "Mute video sound"}
+            title={isMuted ? "Unmute video sound" : "Mute video sound"}
+            className="p-1 text-white/80 hover:text-white transition-colors cursor-pointer drop-shadow-md"
+          >
+            {isMuted ? (
+              <VolumeX className="w-4 h-4 stroke-[1.5]" />
+            ) : (
+              <Volume2 className="w-4 h-4 stroke-[1.5]" />
+            )}
+          </button>
+
+          <div className="w-0 group-hover/audio:w-20 overflow-hidden opacity-0 group-hover/audio:opacity-100 transition-all duration-300 ease-out flex items-center pl-2">
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={isMuted ? 0 : volume}
+              onChange={handleVolumeChange}
+              aria-label="Adjust volume"
+              className="w-full h-1 appearance-none rounded-lg cursor-pointer transition-all"
+              style={{
+                background: `linear-gradient(to right, #a7c080 ${
+                  isMuted ? 0 : Math.round(volume * 100)
+                }%, rgba(255, 255, 255, 0.25) ${
+                  isMuted ? 0 : Math.round(volume * 100)
+                }%)`,
+              }}
+            />
+          </div>
+        </div>
+
+        <button
+          onClick={toggleFullscreen}
+          aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen video"}
+          title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen video"}
+          className="p-1 text-white/80 hover:text-white transition-colors cursor-pointer drop-shadow-md"
+        >
+          {isFullscreen ? (
+            <Minimize2 className="w-4 h-4 stroke-[1.5]" />
+          ) : (
+            <Maximize2 className="w-4 h-4 stroke-[1.5]" />
+          )}
+        </button>
       </div>
     </section>
   );

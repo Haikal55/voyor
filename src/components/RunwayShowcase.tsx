@@ -19,7 +19,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Filter products by selected gender
   const filteredProducts = runwayProducts.filter((p) => {
     if (selectedGender === "men") {
       return (
@@ -65,7 +64,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
   return (
     <section className="py-20 bg-[#080808] text-white border-y border-[#1c1c1c] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Header with Title & Gender Toggle */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-8 mb-6 border-b border-[#1c1c1c] gap-6">
           <div>
             <span className="text-[10px] sm:text-[11px] uppercase tracking-luxury text-[#a7c080] font-medium block mb-2">
@@ -79,7 +77,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
             </p>
           </div>
 
-          {/* Luxury Gender Toggle: WOMEN [ o ] MEN */}
           <div className="flex items-center space-x-3 select-none self-end sm:self-auto pt-2 sm:pt-0">
             <button
               onClick={() => setSelectedGender("women")}
@@ -92,7 +89,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
               WOMEN
             </button>
 
-            {/* Pill Switch Slider */}
             <button
               onClick={() => setSelectedGender(selectedGender === "women" ? "men" : "women")}
               className="relative w-12 h-6 rounded-full border border-neutral-700 bg-[#161616] p-0.5 flex items-center cursor-pointer transition-colors"
@@ -118,9 +114,7 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
           </div>
         </div>
 
-        {/* Carousel Viewport with Full-Bleed Editorial Cards */}
         <div className="relative group/carousel">
-          {/* Left Arrow Button */}
           <button
             onClick={() => handleScroll("left")}
             disabled={!canScrollLeft}
@@ -132,7 +126,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
             <ArrowLeft className="w-4 h-4 stroke-[1.5]" />
           </button>
 
-          {/* Horizontal Track of Full-Bleed Cards */}
           <div
             ref={carouselRef}
             onScroll={checkScroll}
@@ -153,7 +146,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
                     href={`/product/${product.slug}`}
                     className="group relative block aspect-[3/4] w-full bg-[#121212] overflow-hidden border border-[#222] hover:border-[#a7c080]/60 transition-colors duration-300 shadow-xl"
                   >
-                    {/* Primary Full-Bleed Image (Instant switch, no fade animation) */}
                     {primaryImg && (
                       <Image
                         src={primaryImg.url}
@@ -166,7 +158,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
                       />
                     )}
 
-                    {/* Secondary Full-Bleed Image (Instant display on hover, no fade animation) */}
                     {hasSecondary && (
                       <Image
                         src={secondaryImg.url}
@@ -177,10 +168,8 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
                       />
                     )}
 
-                    {/* Multilayered Editorial Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent pointer-events-none" />
 
-                    {/* Bottom Metadata Overlay (Aligned like reference screenshot) */}
                     <div className="absolute bottom-4 left-4 right-4 text-center z-10 space-y-1.5 pointer-events-none">
                       <h3 className="text-sm sm:text-base text-white uppercase tracking-wider font-medium line-clamp-1 group-hover:text-[#a7c080] transition-colors leading-tight">
                         {product.name}
@@ -201,7 +190,6 @@ export function RunwayShowcase({ runwayProducts = [] }: RunwayShowcaseProps) {
             })}
           </div>
 
-          {/* Right Arrow Button */}
           <button
             onClick={() => handleScroll("right")}
             disabled={!canScrollRight}

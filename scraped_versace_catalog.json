@@ -1,0 +1,3041 @@
+[
+  {
+    "id": "prod_01",
+    "slug": "printed-cotton-jersey-slim-t-shirt",
+    "name": "Printed Cotton-Jersey Slim T-Shirt",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A shortsleeved slim Tshirt in cotton jersey featuring a Medusa Timbro graphic at the front",
+    "category_id": "cat_men",
+    "base_price": 540,
+    "base_price_idr": 8500000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1026452-1A19929_1B000-XS",
+        "size": "XS",
+        "color_name": "Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1B000-S",
+        "size": "S",
+        "color_name": "Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1B000-M",
+        "size": "M",
+        "color_name": "Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1B000-L",
+        "size": "L",
+        "color_name": "Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1B000-XL",
+        "size": "XL",
+        "color_name": "Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1W000-XS",
+        "size": "XS",
+        "color_name": "White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1W000-S",
+        "size": "S",
+        "color_name": "White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1W000-M",
+        "size": "M",
+        "color_name": "White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1W000-L",
+        "size": "L",
+        "color_name": "White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026452-1A19929_1W000-XL",
+        "size": "XL",
+        "color_name": "White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/printed-cotton-jersey-slim-t-shirt-black-1.jpg",
+        "alt": "Printed Cotton-Jersey Slim T-Shirt in Black - Versace View 1",
+        "color_name": "Black",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-slim-t-shirt-black-2.jpg",
+        "alt": "Printed Cotton-Jersey Slim T-Shirt in Black - Versace View 2",
+        "color_name": "Black",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-slim-t-shirt-black-3.jpg",
+        "alt": "Printed Cotton-Jersey Slim T-Shirt in Black - Versace View 3",
+        "color_name": "Black",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-slim-t-shirt-white-1.jpg",
+        "alt": "Printed Cotton-Jersey Slim T-Shirt in White - Versace View 1",
+        "color_name": "White",
+        "is_primary": 0,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-slim-t-shirt-white-2.jpg",
+        "alt": "Printed Cotton-Jersey Slim T-Shirt in White - Versace View 2",
+        "color_name": "White",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-slim-t-shirt-white-3.jpg",
+        "alt": "Printed Cotton-Jersey Slim T-Shirt in White - Versace View 3",
+        "color_name": "White",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_02",
+    "slug": "printed-nylon-padded-jacket",
+    "name": "Printed Nylon Padded Jacket",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "This padded nylon jacket features a Barocco printed lining and a Medusa zip puller The outerwear style is completed by a detachable elastic drawstring hood and side snapbutton pockets",
+    "category_id": "cat_men",
+    "base_price": 2610,
+    "base_price_idr": 41180000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027330-1A19434_1LJ80-44",
+        "size": "44",
+        "color_name": "Purple Barocco",
+        "color_hex": "#4B2840",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1LJ80-46",
+        "size": "46",
+        "color_name": "Purple Barocco",
+        "color_hex": "#4B2840",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1LJ80-48",
+        "size": "48",
+        "color_name": "Purple Barocco",
+        "color_hex": "#4B2840",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1LJ80-50",
+        "size": "50",
+        "color_name": "Purple Barocco",
+        "color_hex": "#4B2840",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1LJ80-52",
+        "size": "52",
+        "color_name": "Purple Barocco",
+        "color_hex": "#4B2840",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1UF50-44",
+        "size": "44",
+        "color_name": "Royal Blue Barocco",
+        "color_hex": "#1D3B6C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1UF50-46",
+        "size": "46",
+        "color_name": "Royal Blue Barocco",
+        "color_hex": "#1D3B6C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1UF50-48",
+        "size": "48",
+        "color_name": "Royal Blue Barocco",
+        "color_hex": "#1D3B6C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1UF50-50",
+        "size": "50",
+        "color_name": "Royal Blue Barocco",
+        "color_hex": "#1D3B6C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027330-1A19434_1UF50-52",
+        "size": "52",
+        "color_name": "Royal Blue Barocco",
+        "color_hex": "#1D3B6C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/printed-nylon-padded-jacket-purple-1.jpg",
+        "alt": "Printed Nylon Padded Jacket in Purple Barocco - Versace View 1",
+        "color_name": "Purple Barocco",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-nylon-padded-jacket-purple-2.jpg",
+        "alt": "Printed Nylon Padded Jacket in Purple Barocco - Versace View 2",
+        "color_name": "Purple Barocco",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-nylon-padded-jacket-purple-3.jpg",
+        "alt": "Printed Nylon Padded Jacket in Purple Barocco - Versace View 3",
+        "color_name": "Purple Barocco",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/printed-nylon-padded-jacket-blue-1.jpg",
+        "alt": "Printed Nylon Padded Jacket in Royal Blue Barocco - Versace View 1",
+        "color_name": "Royal Blue Barocco",
+        "is_primary": 0,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-nylon-padded-jacket-blue-2.jpg",
+        "alt": "Printed Nylon Padded Jacket in Royal Blue Barocco - Versace View 2",
+        "color_name": "Royal Blue Barocco",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-nylon-padded-jacket-blue-3.jpg",
+        "alt": "Printed Nylon Padded Jacket in Royal Blue Barocco - Versace View 3",
+        "color_name": "Royal Blue Barocco",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_03",
+    "slug": "embleme-nappa-hobo-bag",
+    "name": "Embl\u00e8me Nappa Hobo Bag",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "The Emblme hobo bag is crafted from exceptionally soft lightweight and smooth nappa leather with a fine grain and handpainted edges This comfortable style is accented by its distinctive Medusa hardware magnetic closure on the leather strap",
+    "category_id": "cat_accessories",
+    "base_price": 2000,
+    "base_price_idr": 31610000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1026199-1A17449_1B55J-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Nero Black",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026199-1A17449_1NL3J-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Tangerine Orange",
+        "color_hex": "#D95D22",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026199-1A17449_1NH4J-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Camel Dune",
+        "color_hex": "#C29B72",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026199-1A17449_1UR9J-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Capri Blue",
+        "color_hex": "#2B588C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-black-1.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Nero Black - Versace View 1",
+        "color_name": "Nero Black",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-black-2.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Nero Black - Versace View 2",
+        "color_name": "Nero Black",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-black-3.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Nero Black - Versace View 3",
+        "color_name": "Nero Black",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-orange-1.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Tangerine Orange - Versace View 1",
+        "color_name": "Tangerine Orange",
+        "is_primary": 0,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-orange-2.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Tangerine Orange - Versace View 2",
+        "color_name": "Tangerine Orange",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-orange-3.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Tangerine Orange - Versace View 3",
+        "color_name": "Tangerine Orange",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-camel-1.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Camel Dune - Versace View 1",
+        "color_name": "Camel Dune",
+        "is_primary": 0,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-camel-2.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Camel Dune - Versace View 2",
+        "color_name": "Camel Dune",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-camel-3.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Camel Dune - Versace View 3",
+        "color_name": "Camel Dune",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-blue-1.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Capri Blue - Versace View 1",
+        "color_name": "Capri Blue",
+        "is_primary": 0,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-blue-2.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Capri Blue - Versace View 2",
+        "color_name": "Capri Blue",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embleme-nappa-hobo-bag-blue-3.jpg",
+        "alt": "Embl\u00e8me Nappa Hobo Bag in Capri Blue - Versace View 3",
+        "color_name": "Capri Blue",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_04",
+    "slug": "envers-satin-gown",
+    "name": "Envers-Satin Gown",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "An elegant Vneck gown in enverssatin featuring accent Medusa hardware on the shoulder straps",
+    "category_id": "cat_women",
+    "base_price": 4810,
+    "base_price_idr": 75970000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1028155-1A10194_1RH70-36",
+        "size": "36",
+        "color_name": "Rosso Red",
+        "color_hex": "#9B1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1RH70-38",
+        "size": "38",
+        "color_name": "Rosso Red",
+        "color_hex": "#9B1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1RH70-40",
+        "size": "40",
+        "color_name": "Rosso Red",
+        "color_hex": "#9B1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1RH70-42",
+        "size": "42",
+        "color_name": "Rosso Red",
+        "color_hex": "#9B1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1RH70-44",
+        "size": "44",
+        "color_name": "Rosso Red",
+        "color_hex": "#9B1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1UR80-36",
+        "size": "36",
+        "color_name": "Cobalt Blue",
+        "color_hex": "#1E3F78",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1UR80-38",
+        "size": "38",
+        "color_name": "Cobalt Blue",
+        "color_hex": "#1E3F78",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1UR80-40",
+        "size": "40",
+        "color_name": "Cobalt Blue",
+        "color_hex": "#1E3F78",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1UR80-42",
+        "size": "42",
+        "color_name": "Cobalt Blue",
+        "color_hex": "#1E3F78",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028155-1A10194_1UR80-44",
+        "size": "44",
+        "color_name": "Cobalt Blue",
+        "color_hex": "#1E3F78",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/envers-satin-gown-red-1.jpg",
+        "alt": "Envers-Satin Gown in Rosso Red - Versace View 1",
+        "color_name": "Rosso Red",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/envers-satin-gown-red-2.jpg",
+        "alt": "Envers-Satin Gown in Rosso Red - Versace View 2",
+        "color_name": "Rosso Red",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/envers-satin-gown-red-3.jpg",
+        "alt": "Envers-Satin Gown in Rosso Red - Versace View 3",
+        "color_name": "Rosso Red",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/envers-satin-gown-blue-1.jpg",
+        "alt": "Envers-Satin Gown in Cobalt Blue - Versace View 1",
+        "color_name": "Cobalt Blue",
+        "is_primary": 0,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/envers-satin-gown-blue-2.jpg",
+        "alt": "Envers-Satin Gown in Cobalt Blue - Versace View 2",
+        "color_name": "Cobalt Blue",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/envers-satin-gown-blue-3.jpg",
+        "alt": "Envers-Satin Gown in Cobalt Blue - Versace View 3",
+        "color_name": "Cobalt Blue",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_05",
+    "slug": "printed-silk-twill-regular-shirt",
+    "name": "Printed Silk Twill Regular Shirt",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "This longsleeved regular shirt in silk twill is defined by the Neoclassical Barocco printblending the Houses Greca and Barocco motifs with floral elements",
+    "category_id": "cat_men",
+    "base_price": 1970,
+    "base_price_idr": 31080000,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027642-1A19744_5NB00-44",
+        "size": "44",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5NB00-46",
+        "size": "46",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5NB00-48",
+        "size": "48",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5NB00-50",
+        "size": "50",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5NB00-52",
+        "size": "52",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5E860-44",
+        "size": "44",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5E860-46",
+        "size": "46",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5E860-48",
+        "size": "48",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5E860-50",
+        "size": "50",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027642-1A19744_5E860-52",
+        "size": "52",
+        "color_name": "Barocco Oro & Nero",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/printed-silk-twill-regular-shirt-oro-1.jpg",
+        "alt": "Printed Silk Twill Regular Shirt in Barocco Oro & Nero - Versace View 1",
+        "color_name": "Barocco Oro & Nero",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-silk-twill-regular-shirt-oro-2.jpg",
+        "alt": "Printed Silk Twill Regular Shirt in Barocco Oro & Nero - Versace View 2",
+        "color_name": "Barocco Oro & Nero",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-silk-twill-regular-shirt-oro-3.jpg",
+        "alt": "Printed Silk Twill Regular Shirt in Barocco Oro & Nero - Versace View 3",
+        "color_name": "Barocco Oro & Nero",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_06",
+    "slug": "lace-wool-blend-mini-dress",
+    "name": "Lace Wool-Blend Mini Dress",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A sleeveless mockneck mini dress crafted from a wool blend lace featuring floral motifs",
+    "category_id": "cat_women",
+    "base_price": 2250,
+    "base_price_idr": 35600000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027683-1A19449_1B000-36",
+        "size": "36",
+        "color_name": "Nero Couture",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027683-1A19449_1B000-38",
+        "size": "38",
+        "color_name": "Nero Couture",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027683-1A19449_1B000-40",
+        "size": "40",
+        "color_name": "Nero Couture",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027683-1A19449_1B000-42",
+        "size": "42",
+        "color_name": "Nero Couture",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027683-1A19449_1B000-44",
+        "size": "44",
+        "color_name": "Nero Couture",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/lace-wool-blend-mini-dress-nero-1.jpg",
+        "alt": "Lace Wool-Blend Mini Dress in Nero Couture - Versace View 1",
+        "color_name": "Nero Couture",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/lace-wool-blend-mini-dress-nero-2.jpg",
+        "alt": "Lace Wool-Blend Mini Dress in Nero Couture - Versace View 2",
+        "color_name": "Nero Couture",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/lace-wool-blend-mini-dress-nero-3.jpg",
+        "alt": "Lace Wool-Blend Mini Dress in Nero Couture - Versace View 3",
+        "color_name": "Nero Couture",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_07",
+    "slug": "medusa-choker-necklace",
+    "name": "Medusa Necklace",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A statement gold chain chocker necklace featuring a central Medusa Icon This piece has a vintage effect colour quality All Versace Jewellery products are lead and nickel free All the materials are hypoallergenic",
+    "category_id": "cat_jewelry",
+    "base_price": 1310,
+    "base_price_idr": 20720000,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "DG16949-DJMT_KOT-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Tribute Gold",
+        "color_hex": "#E5B80B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/medusa-choker-necklace-gold-1.jpg",
+        "alt": "Medusa Necklace in Tribute Gold - Versace View 1",
+        "color_name": "Tribute Gold",
+        "is_primary": 1,
+        "display_order": 1
+      }
+    ]
+  },
+  {
+    "id": "prod_08",
+    "slug": "valentina-embellished-satin-sandals-105-mm",
+    "name": "Valentina Embellished Satin Sandals 105 mm",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "The Valentina highheeled sandals are made from satin and embellished with crystal applications The style is enriched with an accent 3D Medusa metal stud on the uppers",
+    "category_id": "cat_shoes",
+    "base_price": 1650,
+    "base_price_idr": 26040000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027289-1A19894_1B55J-35",
+        "size": "35",
+        "color_name": "Nero Satin & Crystal",
+        "color_hex": "#0D0D0D",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027289-1A19894_1B55J-35.5",
+        "size": "35.5",
+        "color_name": "Nero Satin & Crystal",
+        "color_hex": "#0D0D0D",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027289-1A19894_1B55J-36",
+        "size": "36",
+        "color_name": "Nero Satin & Crystal",
+        "color_hex": "#0D0D0D",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027289-1A19894_1B55J-36.5",
+        "size": "36.5",
+        "color_name": "Nero Satin & Crystal",
+        "color_hex": "#0D0D0D",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027289-1A19894_1B55J-37",
+        "size": "37",
+        "color_name": "Nero Satin & Crystal",
+        "color_hex": "#0D0D0D",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/valentina-embellished-satin-sandals-105-mm-nero-1.jpg",
+        "alt": "Valentina Embellished Satin Sandals 105 mm in Nero Satin & Crystal - Versace View 1",
+        "color_name": "Nero Satin & Crystal",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/valentina-embellished-satin-sandals-105-mm-nero-2.jpg",
+        "alt": "Valentina Embellished Satin Sandals 105 mm in Nero Satin & Crystal - Versace View 2",
+        "color_name": "Nero Satin & Crystal",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/valentina-embellished-satin-sandals-105-mm-nero-3.jpg",
+        "alt": "Valentina Embellished Satin Sandals 105 mm in Nero Satin & Crystal - Versace View 3",
+        "color_name": "Nero Satin & Crystal",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_09",
+    "slug": "lou-leather-backpack",
+    "name": "Lou Leather Backpack",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A backpack crafted from calf leather featuring metal rivets and a Medusa Cameo leather patcha 3D rendition which captures the depth of Medusas eyes and winged details in her hair The spacious style has an interior slip pocket and is completed by a front zipped pocket",
+    "category_id": "cat_accessories",
+    "base_price": 3300,
+    "base_price_idr": 52070000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1024360-1A18107_1B55J-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Nero Leather",
+        "color_hex": "#121212",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/lou-leather-backpack-nero-1.jpg",
+        "alt": "Lou Leather Backpack in Nero Leather - Versace View 1",
+        "color_name": "Nero Leather",
+        "is_primary": 1,
+        "display_order": 1
+      }
+    ]
+  },
+  {
+    "id": "prod_10",
+    "slug": "medusa-biggie-leather-belt",
+    "name": "Medusa Biggie Leather Belt 1.2\"",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "This belt is crafted from premium leather featuring a gold tone Medusa Biggie buckle and accent belt loop",
+    "category_id": "cat_accessories",
+    "base_price": 690,
+    "base_price_idr": 10900000,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1003760-DVTP1_1B00V-70",
+        "size": "70",
+        "color_name": "Nero & Oro Medusa",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1003760-DVTP1_1B00V-75",
+        "size": "75",
+        "color_name": "Nero & Oro Medusa",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1003760-DVTP1_1B00V-80",
+        "size": "80",
+        "color_name": "Nero & Oro Medusa",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1003760-DVTP1_1B00V-85",
+        "size": "85",
+        "color_name": "Nero & Oro Medusa",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1003760-DVTP1_1B00V-90",
+        "size": "90",
+        "color_name": "Nero & Oro Medusa",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/medusa-biggie-leather-belt-nero-1.jpg",
+        "alt": "Medusa Biggie Leather Belt 1.2\" in Nero & Oro Medusa - Versace View 1",
+        "color_name": "Nero & Oro Medusa",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/medusa-biggie-leather-belt-nero-2.jpg",
+        "alt": "Medusa Biggie Leather Belt 1.2\" in Nero & Oro Medusa - Versace View 2",
+        "color_name": "Nero & Oro Medusa",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/medusa-biggie-leather-belt-nero-3.jpg",
+        "alt": "Medusa Biggie Leather Belt 1.2\" in Nero & Oro Medusa - Versace View 3",
+        "color_name": "Nero & Oro Medusa",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_11",
+    "slug": "eros-energy-eau-de-parfum",
+    "name": "Eros Energy EDP 50 ml",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Inspired by the breath-taking beauty of the Mediterranean coastline, Eros Energy is the fresh, vibrant fragrance of passionate citrus and Italian sun.",
+    "category_id": "cat_parfumerie",
+    "base_price": 180,
+    "base_price_idr": 2850000,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "R742008-R050MLS_RNUL-100_ml",
+        "size": "100 ml",
+        "color_name": "Pure Citrus Gold",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/eros-energy-eau-de-parfum-gold-1.jpg",
+        "alt": "Eros Energy EDP 50 ml in Pure Citrus Gold - Versace View 1",
+        "color_name": "Pure Citrus Gold",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/eros-energy-eau-de-parfum-gold-2.jpg",
+        "alt": "Eros Energy EDP 50 ml in Pure Citrus Gold - Versace View 2",
+        "color_name": "Pure Citrus Gold",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/eros-energy-eau-de-parfum-gold-3.jpg",
+        "alt": "Eros Energy EDP 50 ml in Pure Citrus Gold - Versace View 3",
+        "color_name": "Pure Citrus Gold",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_12",
+    "slug": "roomy-leather-wallet",
+    "name": "Roomy Leather Wallet",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A compact bifold wallet in calf leather featuring a Medusa Cameo leather patch at the front The functional accessory features multiple card slots bill compartments and a snapbuttoned coin pouch",
+    "category_id": "cat_accessories",
+    "base_price": 670,
+    "base_price_idr": 10630000,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 0,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "DPU6737-1A18566_2B0AJ-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Nero Bifold",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/roomy-leather-wallet-nero-1.jpg",
+        "alt": "Roomy Leather Wallet in Nero Bifold - Versace View 1",
+        "color_name": "Nero Bifold",
+        "is_primary": 1,
+        "display_order": 1
+      }
+    ]
+  },
+  {
+    "id": "prod_13",
+    "slug": "printed-silk-twill-shirt",
+    "name": "Printed Silk Twill Shirt",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A longsleeved silktwill shirt featuring the Neoclassical Barocco printblending the Houses Greca and Barocco motifs with floral elements",
+    "category_id": "cat_women",
+    "base_price": 1970,
+    "base_price_idr": 31080000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1028153-1A19860_5E860-36",
+        "size": "36",
+        "color_name": "Barocco Grigio",
+        "color_hex": "#7B858B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5E860-38",
+        "size": "38",
+        "color_name": "Barocco Grigio",
+        "color_hex": "#7B858B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5E860-40",
+        "size": "40",
+        "color_name": "Barocco Grigio",
+        "color_hex": "#7B858B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5E860-42",
+        "size": "42",
+        "color_name": "Barocco Grigio",
+        "color_hex": "#7B858B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5E860-44",
+        "size": "44",
+        "color_name": "Barocco Grigio",
+        "color_hex": "#7B858B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5PI00-36",
+        "size": "36",
+        "color_name": "Barocco Rosa",
+        "color_hex": "#D4A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5PI00-38",
+        "size": "38",
+        "color_name": "Barocco Rosa",
+        "color_hex": "#D4A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5PI00-40",
+        "size": "40",
+        "color_name": "Barocco Rosa",
+        "color_hex": "#D4A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5PI00-42",
+        "size": "42",
+        "color_name": "Barocco Rosa",
+        "color_hex": "#D4A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028153-1A19860_5PI00-44",
+        "size": "44",
+        "color_name": "Barocco Rosa",
+        "color_hex": "#D4A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/printed-silk-twill-shirt-grigio-1.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Grigio - Versace View 1",
+        "color_name": "Barocco Grigio",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-silk-twill-shirt-grigio-2.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Grigio - Versace View 2",
+        "color_name": "Barocco Grigio",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-silk-twill-shirt-grigio-3.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Grigio - Versace View 3",
+        "color_name": "Barocco Grigio",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/printed-silk-twill-shirt-rosa-1.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Rosa - Versace View 1",
+        "color_name": "Barocco Rosa",
+        "is_primary": 0,
+        "display_order": 4
+      },
+      {
+        "url": "/images/products/printed-silk-twill-shirt-rosa-2.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Rosa - Versace View 2",
+        "color_name": "Barocco Rosa",
+        "is_primary": 0,
+        "display_order": 5
+      },
+      {
+        "url": "/images/products/printed-silk-twill-shirt-rosa-3.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Rosa - Versace View 3",
+        "color_name": "Barocco Rosa",
+        "is_primary": 0,
+        "display_order": 6
+      }
+    ]
+  },
+  {
+    "id": "prod_14",
+    "slug": "barocco-mint-silk-twill-shirt",
+    "name": "Barocco Mint Silk Twill Shirt",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Silk twill longsleeved regular shirt featuring the Broken Jewels print",
+    "category_id": "cat_women",
+    "base_price": 950,
+    "base_price_idr": 14980000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1025686-1A18856_5GE70-36",
+        "size": "36",
+        "color_name": "Barocco Mint & Oro",
+        "color_hex": "#608F79",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025686-1A18856_5GE70-38",
+        "size": "38",
+        "color_name": "Barocco Mint & Oro",
+        "color_hex": "#608F79",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025686-1A18856_5GE70-40",
+        "size": "40",
+        "color_name": "Barocco Mint & Oro",
+        "color_hex": "#608F79",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025686-1A18856_5GE70-42",
+        "size": "42",
+        "color_name": "Barocco Mint & Oro",
+        "color_hex": "#608F79",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025686-1A18856_5GE70-44",
+        "size": "44",
+        "color_name": "Barocco Mint & Oro",
+        "color_hex": "#608F79",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/barocco-mint-silk-twill-shirt-mint-1.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Mint & Oro - Versace View 1",
+        "color_name": "Barocco Mint & Oro",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/barocco-mint-silk-twill-shirt-mint-2.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Mint & Oro - Versace View 2",
+        "color_name": "Barocco Mint & Oro",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/barocco-mint-silk-twill-shirt-mint-3.jpg",
+        "alt": "Printed Silk Twill Shirt in Barocco Mint & Oro - Versace View 3",
+        "color_name": "Barocco Mint & Oro",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_15",
+    "slug": "wool-jersey-tank-top",
+    "name": "Wool-Jersey Tank Top",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A sleeveless tank top crafted from fluid wool featuring a threadembroidered Versace Logo at the back",
+    "category_id": "cat_women",
+    "base_price": 980,
+    "base_price_idr": 15410000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027860-1A19911_1ED90-36",
+        "size": "36",
+        "color_name": "Nero & Tribute Gold",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027860-1A19911_1ED90-38",
+        "size": "38",
+        "color_name": "Nero & Tribute Gold",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027860-1A19911_1ED90-40",
+        "size": "40",
+        "color_name": "Nero & Tribute Gold",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027860-1A19911_1ED90-42",
+        "size": "42",
+        "color_name": "Nero & Tribute Gold",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027860-1A19911_1ED90-44",
+        "size": "44",
+        "color_name": "Nero & Tribute Gold",
+        "color_hex": "#1A1A1A",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/wool-jersey-tank-top-nero-1.jpg",
+        "alt": "Wool-Jersey Tank Top in Nero & Tribute Gold - Versace View 1",
+        "color_name": "Nero & Tribute Gold",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/wool-jersey-tank-top-nero-2.jpg",
+        "alt": "Wool-Jersey Tank Top in Nero & Tribute Gold - Versace View 2",
+        "color_name": "Nero & Tribute Gold",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/wool-jersey-tank-top-nero-3.jpg",
+        "alt": "Wool-Jersey Tank Top in Nero & Tribute Gold - Versace View 3",
+        "color_name": "Nero & Tribute Gold",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_16",
+    "slug": "denim-blazer",
+    "name": "Denim Blazer",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A singlebreasted cottonsilk denim blazer in a dark rinsewashed finish featuring accent Medusa buttons",
+    "category_id": "cat_women",
+    "base_price": 4470,
+    "base_price_idr": 70660000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027805-1A19444_1D870-36",
+        "size": "36",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027805-1A19444_1D870-38",
+        "size": "38",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027805-1A19444_1D870-40",
+        "size": "40",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027805-1A19444_1D870-42",
+        "size": "42",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027805-1A19444_1D870-44",
+        "size": "44",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/denim-blazer-indigo-1.jpg",
+        "alt": "Denim Blazer in Raw Indigo Denim - Versace View 1",
+        "color_name": "Raw Indigo Denim",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/denim-blazer-indigo-2.jpg",
+        "alt": "Denim Blazer in Raw Indigo Denim - Versace View 2",
+        "color_name": "Raw Indigo Denim",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/denim-blazer-indigo-3.jpg",
+        "alt": "Denim Blazer in Raw Indigo Denim - Versace View 3",
+        "color_name": "Raw Indigo Denim",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_17",
+    "slug": "denim-high-waist-flared-pants",
+    "name": "Denim High-Waist Flared Pants",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "These cottonsilk denim pants in a dark rinsewash finish feature an accent Medusa button at the front closure A leather label on the back displays a heatstamped Versace Logo and Medusa hardware",
+    "category_id": "cat_women",
+    "base_price": 2760,
+    "base_price_idr": 43570000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027145-1A19444_1D870-24",
+        "size": "24",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027145-1A19444_1D870-25",
+        "size": "25",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027145-1A19444_1D870-26",
+        "size": "26",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027145-1A19444_1D870-27",
+        "size": "27",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027145-1A19444_1D870-28",
+        "size": "28",
+        "color_name": "Raw Indigo Denim",
+        "color_hex": "#22374E",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/denim-high-waist-flared-pants-indigo-1.jpg",
+        "alt": "Denim High-Waist Flared Pants in Raw Indigo Denim - Versace View 1",
+        "color_name": "Raw Indigo Denim",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/denim-high-waist-flared-pants-indigo-2.jpg",
+        "alt": "Denim High-Waist Flared Pants in Raw Indigo Denim - Versace View 2",
+        "color_name": "Raw Indigo Denim",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/denim-high-waist-flared-pants-indigo-3.jpg",
+        "alt": "Denim High-Waist Flared Pants in Raw Indigo Denim - Versace View 3",
+        "color_name": "Raw Indigo Denim",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_18",
+    "slug": "croc-effect-nappa-blazer",
+    "name": "Croc-Effect Nappa Blazer",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "This singlebreasted blazer is crafted from croceffect embossed nappa leather featuring Versace Logo embossing at the back collar and accented horn buttons with a metalrimmed Greca engraving",
+    "category_id": "cat_women",
+    "base_price": 5260,
+    "base_price_idr": 83150000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1027492-1A19488_1N230-36",
+        "size": "36",
+        "color_name": "Espresso Croc Leather",
+        "color_hex": "#2D1E18",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027492-1A19488_1N230-38",
+        "size": "38",
+        "color_name": "Espresso Croc Leather",
+        "color_hex": "#2D1E18",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027492-1A19488_1N230-40",
+        "size": "40",
+        "color_name": "Espresso Croc Leather",
+        "color_hex": "#2D1E18",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027492-1A19488_1N230-42",
+        "size": "42",
+        "color_name": "Espresso Croc Leather",
+        "color_hex": "#2D1E18",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027492-1A19488_1N230-44",
+        "size": "44",
+        "color_name": "Espresso Croc Leather",
+        "color_hex": "#2D1E18",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/croc-effect-nappa-blazer-espresso-1.jpg",
+        "alt": "Croc-Effect Nappa Blazer in Espresso Croc Leather - Versace View 1",
+        "color_name": "Espresso Croc Leather",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/croc-effect-nappa-blazer-espresso-2.jpg",
+        "alt": "Croc-Effect Nappa Blazer in Espresso Croc Leather - Versace View 2",
+        "color_name": "Espresso Croc Leather",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/croc-effect-nappa-blazer-espresso-3.jpg",
+        "alt": "Croc-Effect Nappa Blazer in Espresso Croc Leather - Versace View 3",
+        "color_name": "Espresso Croc Leather",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_19",
+    "slug": "greca-run-suede-sneakers",
+    "name": "Greca Run Suede Sneakers",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "The Greca Run sneakers are crafted from suede and feature a side insert adorned with the Greca motif created through microperforations The slim rubber outsole features a repeating embossed Greca pattern The design is completed with a heatstamped Versace Logo on the tongue and the iconic Medusa at the back",
+    "category_id": "cat_shoes",
+    "base_price": 980,
+    "base_price_idr": 15410000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1028311-1A20326_1UM40-38.5",
+        "size": "38.5",
+        "color_name": "Royal Blue & Sand",
+        "color_hex": "#274C77",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1UM40-39",
+        "size": "39",
+        "color_name": "Royal Blue & Sand",
+        "color_hex": "#274C77",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1UM40-39.5",
+        "size": "39.5",
+        "color_name": "Royal Blue & Sand",
+        "color_hex": "#274C77",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1UM40-40",
+        "size": "40",
+        "color_name": "Royal Blue & Sand",
+        "color_hex": "#274C77",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1UM40-40.5",
+        "size": "40.5",
+        "color_name": "Royal Blue & Sand",
+        "color_hex": "#274C77",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1N870-38.5",
+        "size": "38.5",
+        "color_name": "Caramel Nappa",
+        "color_hex": "#8D5B4C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1N870-39",
+        "size": "39",
+        "color_name": "Caramel Nappa",
+        "color_hex": "#8D5B4C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1N870-39.5",
+        "size": "39.5",
+        "color_name": "Caramel Nappa",
+        "color_hex": "#8D5B4C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1N870-40",
+        "size": "40",
+        "color_name": "Caramel Nappa",
+        "color_hex": "#8D5B4C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1N870-40.5",
+        "size": "40.5",
+        "color_name": "Caramel Nappa",
+        "color_hex": "#8D5B4C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1W030-38.5",
+        "size": "38.5",
+        "color_name": "Optic White Suede",
+        "color_hex": "#EEEEEE",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1W030-39",
+        "size": "39",
+        "color_name": "Optic White Suede",
+        "color_hex": "#EEEEEE",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1W030-39.5",
+        "size": "39.5",
+        "color_name": "Optic White Suede",
+        "color_hex": "#EEEEEE",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1W030-40",
+        "size": "40",
+        "color_name": "Optic White Suede",
+        "color_hex": "#EEEEEE",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1028311-1A20326_1W030-40.5",
+        "size": "40.5",
+        "color_name": "Optic White Suede",
+        "color_hex": "#EEEEEE",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/greca-run-suede-sneakers-blue-1.jpg",
+        "alt": "Greca Run Suede Sneakers in Royal Blue & Sand - Versace View 1",
+        "color_name": "Royal Blue & Sand",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-blue-2.jpg",
+        "alt": "Greca Run Suede Sneakers in Royal Blue & Sand - Versace View 2",
+        "color_name": "Royal Blue & Sand",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-blue-3.jpg",
+        "alt": "Greca Run Suede Sneakers in Royal Blue & Sand - Versace View 3",
+        "color_name": "Royal Blue & Sand",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-caramel-1.jpg",
+        "alt": "Greca Run Suede Sneakers in Caramel Nappa - Versace View 1",
+        "color_name": "Caramel Nappa",
+        "is_primary": 0,
+        "display_order": 4
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-caramel-2.jpg",
+        "alt": "Greca Run Suede Sneakers in Caramel Nappa - Versace View 2",
+        "color_name": "Caramel Nappa",
+        "is_primary": 0,
+        "display_order": 5
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-caramel-3.jpg",
+        "alt": "Greca Run Suede Sneakers in Caramel Nappa - Versace View 3",
+        "color_name": "Caramel Nappa",
+        "is_primary": 0,
+        "display_order": 6
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-white-1.jpg",
+        "alt": "Greca Run Suede Sneakers in Optic White Suede - Versace View 1",
+        "color_name": "Optic White Suede",
+        "is_primary": 0,
+        "display_order": 7
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-white-2.jpg",
+        "alt": "Greca Run Suede Sneakers in Optic White Suede - Versace View 2",
+        "color_name": "Optic White Suede",
+        "is_primary": 0,
+        "display_order": 8
+      },
+      {
+        "url": "/images/products/greca-run-suede-sneakers-white-3.jpg",
+        "alt": "Greca Run Suede Sneakers in Optic White Suede - Versace View 3",
+        "color_name": "Optic White Suede",
+        "is_primary": 0,
+        "display_order": 9
+      }
+    ]
+  },
+  {
+    "id": "prod_20",
+    "slug": "plonge-leather-pants",
+    "name": "Plong\u00e9 Leather Pants",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Plong leather pants in a straightleg fit featuring a classic fivepocket design A leather patch details the back with an embossed Versace Logo and 3D Medusa hardware",
+    "category_id": "cat_men",
+    "base_price": 4810,
+    "base_price_idr": 75970000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1023731-1A17491_1B000-44",
+        "size": "44",
+        "color_name": "Nero Plong\u00e9",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1B000-46",
+        "size": "46",
+        "color_name": "Nero Plong\u00e9",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1B000-48",
+        "size": "48",
+        "color_name": "Nero Plong\u00e9",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1B000-50",
+        "size": "50",
+        "color_name": "Nero Plong\u00e9",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1B000-52",
+        "size": "52",
+        "color_name": "Nero Plong\u00e9",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1UP70-44",
+        "size": "44",
+        "color_name": "Midnight Blue",
+        "color_hex": "#16243B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1UP70-46",
+        "size": "46",
+        "color_name": "Midnight Blue",
+        "color_hex": "#16243B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1UP70-48",
+        "size": "48",
+        "color_name": "Midnight Blue",
+        "color_hex": "#16243B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1UP70-50",
+        "size": "50",
+        "color_name": "Midnight Blue",
+        "color_hex": "#16243B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1UP70-52",
+        "size": "52",
+        "color_name": "Midnight Blue",
+        "color_hex": "#16243B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1RE60-44",
+        "size": "44",
+        "color_name": "Rosso Red Plong\u00e9",
+        "color_hex": "#8A1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1RE60-46",
+        "size": "46",
+        "color_name": "Rosso Red Plong\u00e9",
+        "color_hex": "#8A1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1RE60-48",
+        "size": "48",
+        "color_name": "Rosso Red Plong\u00e9",
+        "color_hex": "#8A1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1RE60-50",
+        "size": "50",
+        "color_name": "Rosso Red Plong\u00e9",
+        "color_hex": "#8A1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1023731-1A17491_1RE60-52",
+        "size": "52",
+        "color_name": "Rosso Red Plong\u00e9",
+        "color_hex": "#8A1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/plonge-leather-pants-nero-1.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Nero Plong\u00e9 - Versace View 1",
+        "color_name": "Nero Plong\u00e9",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-nero-2.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Nero Plong\u00e9 - Versace View 2",
+        "color_name": "Nero Plong\u00e9",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-nero-3.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Nero Plong\u00e9 - Versace View 3",
+        "color_name": "Nero Plong\u00e9",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-blue-1.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Midnight Blue - Versace View 1",
+        "color_name": "Midnight Blue",
+        "is_primary": 0,
+        "display_order": 4
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-blue-2.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Midnight Blue - Versace View 2",
+        "color_name": "Midnight Blue",
+        "is_primary": 0,
+        "display_order": 5
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-blue-3.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Midnight Blue - Versace View 3",
+        "color_name": "Midnight Blue",
+        "is_primary": 0,
+        "display_order": 6
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-rosso-1.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Rosso Red Plong\u00e9 - Versace View 1",
+        "color_name": "Rosso Red Plong\u00e9",
+        "is_primary": 0,
+        "display_order": 7
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-rosso-2.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Rosso Red Plong\u00e9 - Versace View 2",
+        "color_name": "Rosso Red Plong\u00e9",
+        "is_primary": 0,
+        "display_order": 8
+      },
+      {
+        "url": "/images/products/plonge-leather-pants-rosso-3.jpg",
+        "alt": "Plong\u00e9 Leather Pants in Rosso Red Plong\u00e9 - Versace View 3",
+        "color_name": "Rosso Red Plong\u00e9",
+        "is_primary": 0,
+        "display_order": 9
+      }
+    ]
+  },
+  {
+    "id": "prod_21",
+    "slug": "severine-croc-leather-shoulder-bag",
+    "name": "Severine Croc-Effect Leather Shoulder Bag",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "The Severine shoulder bag is crafted from croceffect embossed calf leather with handpainted edges Its spacious design features two main compartments a central zipped compartment and a detachable and adjustable shoulder strap for versatile styling The smooth calf leather foldover flap is closed by a magnetic squared Medusa hardware",
+    "category_id": "cat_accessories",
+    "base_price": 3720,
+    "base_price_idr": 58710000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "1026479-1A19683_1RH8G-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Rosso Red Croc",
+        "color_hex": "#8A1A24",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026479-1A19683_1B00G-ONE_SIZE",
+        "size": "ONE SIZE",
+        "color_name": "Nero Croc Gold",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/severine-croc-leather-shoulder-bag-rosso-1.jpg",
+        "alt": "Severine Croc-Effect Leather Shoulder Bag in Rosso Red Croc - Versace View 1",
+        "color_name": "Rosso Red Croc",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/severine-croc-leather-shoulder-bag-rosso-2.jpg",
+        "alt": "Severine Croc-Effect Leather Shoulder Bag in Rosso Red Croc - Versace View 2",
+        "color_name": "Rosso Red Croc",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/severine-croc-leather-shoulder-bag-rosso-3.jpg",
+        "alt": "Severine Croc-Effect Leather Shoulder Bag in Rosso Red Croc - Versace View 3",
+        "color_name": "Rosso Red Croc",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/severine-croc-leather-shoulder-bag-nero-1.jpg",
+        "alt": "Severine Croc-Effect Leather Shoulder Bag in Nero Croc Gold - Versace View 1",
+        "color_name": "Nero Croc Gold",
+        "is_primary": 0,
+        "display_order": 4
+      },
+      {
+        "url": "/images/products/severine-croc-leather-shoulder-bag-nero-2.jpg",
+        "alt": "Severine Croc-Effect Leather Shoulder Bag in Nero Croc Gold - Versace View 2",
+        "color_name": "Nero Croc Gold",
+        "is_primary": 0,
+        "display_order": 5
+      },
+      {
+        "url": "/images/products/severine-croc-leather-shoulder-bag-nero-3.jpg",
+        "alt": "Severine Croc-Effect Leather Shoulder Bag in Nero Croc Gold - Versace View 3",
+        "color_name": "Nero Croc Gold",
+        "is_primary": 0,
+        "display_order": 6
+      }
+    ]
+  },
+  {
+    "id": "prod_22",
+    "slug": "crystal-noir-eau-de-toilette",
+    "name": "Crystal Noir EDT 50 ml",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A sensual and delicate fragrance with a floral-oriental aroma and a warm, amber and musky base.",
+    "category_id": "cat_parfumerie",
+    "base_price": 120,
+    "base_price_idr": 1901000.0,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "R07126-R050MLS_RNUL-50_ml",
+        "size": "50 ml",
+        "color_name": "Garnet Noir",
+        "color_hex": "#2E1524",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "R07126-R050MLS_RNUL-100_ml",
+        "size": "100 ml",
+        "color_name": "Garnet Noir",
+        "color_hex": "#2E1524",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/crystal-noir-eau-de-toilette-noir-1.jpg",
+        "alt": "Crystal Noir EDT 50 ml in Garnet Noir - Versace View 1",
+        "color_name": "Garnet Noir",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/crystal-noir-eau-de-toilette-noir-2.jpg",
+        "alt": "Crystal Noir EDT 50 ml in Garnet Noir - Versace View 2",
+        "color_name": "Garnet Noir",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/crystal-noir-eau-de-toilette-noir-3.jpg",
+        "alt": "Crystal Noir EDT 50 ml in Garnet Noir - Versace View 3",
+        "color_name": "Garnet Noir",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_23",
+    "slug": "bright-crystal-parfum",
+    "name": "Bright Crystal Parfum 50 ml",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "An intense, long-lasting floral fragrance with refined notes of pomegranate, yuzu, peony, magnolia, and lotus flower.",
+    "category_id": "cat_parfumerie",
+    "base_price": 150,
+    "base_price_idr": 2350000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "R512030-R050MLS_RNUL-50_ml",
+        "size": "50 ml",
+        "color_name": "Crystal Ros\u00e9",
+        "color_hex": "#E8A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "R512030-R050MLS_RNUL-100_ml",
+        "size": "100 ml",
+        "color_name": "Crystal Ros\u00e9",
+        "color_hex": "#E8A5B8",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/bright-crystal-parfum-rose-1.jpg",
+        "alt": "Bright Crystal Parfum 50 ml in Crystal Ros\u00e9 - Versace View 1",
+        "color_name": "Crystal Ros\u00e9",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/bright-crystal-parfum-rose-2.jpg",
+        "alt": "Bright Crystal Parfum 50 ml in Crystal Ros\u00e9 - Versace View 2",
+        "color_name": "Crystal Ros\u00e9",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/bright-crystal-parfum-rose-3.jpg",
+        "alt": "Bright Crystal Parfum 50 ml in Crystal Ros\u00e9 - Versace View 3",
+        "color_name": "Crystal Ros\u00e9",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_24",
+    "slug": "eros-eau-de-toilette",
+    "name": "Eros EDT 100 ml",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Versace Eros is a fragrance for a strong, passionate man who is master of himself. Notes of mint leaves, Italian lemon zest, green apple, tonka beans, and cedarwood.",
+    "category_id": "cat_parfumerie",
+    "base_price": 130,
+    "base_price_idr": 2100000.0,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury dry clean or boutique care service. Preserve in provided garment bag.",
+    "variants": [
+      {
+        "sku": "R740010-R100MLS_RNUL-50_ml",
+        "size": "50 ml",
+        "color_name": "Mediterranean Turquoise",
+        "color_hex": "#1C6E8C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "R740010-R100MLS_RNUL-100_ml",
+        "size": "100 ml",
+        "color_name": "Mediterranean Turquoise",
+        "color_hex": "#1C6E8C",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/eros-eau-de-toilette-turquoise-1.jpg",
+        "alt": "Eros EDT 100 ml in Mediterranean Turquoise - Versace View 1",
+        "color_name": "Mediterranean Turquoise",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/eros-eau-de-toilette-turquoise-2.jpg",
+        "alt": "Eros EDT 100 ml in Mediterranean Turquoise - Versace View 2",
+        "color_name": "Mediterranean Turquoise",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/eros-eau-de-toilette-turquoise-3.jpg",
+        "alt": "Eros EDT 100 ml in Mediterranean Turquoise - Versace View 3",
+        "color_name": "Mediterranean Turquoise",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_25",
+    "slug": "embroidered-logo-cotton-ribbed-socks",
+    "name": "Embroidered-Logo Cotton Ribbed Socks",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Footwear",
+    "description": "Ribbed cotton socks featuring a jacquard diagonal geometric pattern at the edges and an embroidered Versace Logo",
+    "category_id": "cat_shoes",
+    "base_price": 140,
+    "base_price_idr": 2180000.0,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "80% Cotton, 16% Polyamide, 4% Elastane",
+    "origin": "Made in Italy",
+    "details_json": "[\"Embroidered 90s vintage Versace logo on ribbed leg\", \"Fine stretch cotton ribbed knit construction\", \"Reinforced heel and toe for durability\", \"Includes authentic Versace packaging and label NFC authentication\"]",
+    "care_guide": "Machine wash at 30\u00b0C delicate cycle. Do not tumble dry.",
+    "variants": [
+      {
+        "sku": "1008835-1A18839_1B100-S",
+        "size": "S (39-41)",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1B100-M",
+        "size": "M (42-44)",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1B100-L",
+        "size": "L (45-47)",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1EK80-S",
+        "size": "S (39-41)",
+        "color_name": "Grigio Melange",
+        "color_hex": "#7B858B",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1EK80-M",
+        "size": "M (42-44)",
+        "color_name": "Grigio Melange",
+        "color_hex": "#7B858B",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1EK80-L",
+        "size": "L (45-47)",
+        "color_name": "Grigio Melange",
+        "color_hex": "#7B858B",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1W800-S",
+        "size": "S (39-41)",
+        "color_name": "Optic White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1W800-M",
+        "size": "M (42-44)",
+        "color_name": "Optic White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 15,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008835-1A18839_1W800-L",
+        "size": "L (45-47)",
+        "color_name": "Optic White",
+        "color_hex": "#FFFFFF",
+        "stock_quantity": 15,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/embroidered-logo-cotton-ribbed-socks-black-1.jpg",
+        "alt": "Embroidered-Logo Cotton Ribbed Socks in Nero Black - Versace View 1",
+        "color_name": "Nero Black",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embroidered-logo-cotton-ribbed-socks-black-2.jpg",
+        "alt": "Embroidered-Logo Cotton Ribbed Socks in Nero Black - Versace View 2",
+        "color_name": "Nero Black",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embroidered-logo-cotton-ribbed-socks-gray-1.jpg",
+        "alt": "Embroidered-Logo Cotton Ribbed Socks in Grigio Melange - Versace View 1",
+        "color_name": "Grigio Melange",
+        "is_primary": 0,
+        "display_order": 3
+      },
+      {
+        "url": "/images/products/embroidered-logo-cotton-ribbed-socks-gray-2.jpg",
+        "alt": "Embroidered-Logo Cotton Ribbed Socks in Grigio Melange - Versace View 2",
+        "color_name": "Grigio Melange",
+        "is_primary": 0,
+        "display_order": 4
+      },
+      {
+        "url": "/images/products/embroidered-logo-cotton-ribbed-socks-white-1.jpg",
+        "alt": "Embroidered-Logo Cotton Ribbed Socks in Optic White - Versace View 1",
+        "color_name": "Optic White",
+        "is_primary": 0,
+        "display_order": 5
+      },
+      {
+        "url": "/images/products/embroidered-logo-cotton-ribbed-socks-white-2.jpg",
+        "alt": "Embroidered-Logo Cotton Ribbed Socks in Optic White - Versace View 2",
+        "color_name": "Optic White",
+        "is_primary": 0,
+        "display_order": 6
+      }
+    ]
+  },
+  {
+    "id": "prod_29",
+    "slug": "double-wool-cashmere-coat",
+    "name": "Double Wool & Cashmere Coat",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "This doublebreasted coat is crafted from double wool and cashmere and is detailed with a small removable Medusa pin on the notched lapel The style is completed by horn buttons with a metalrim Greca engraving",
+    "category_id": "cat_men",
+    "base_price": 6860,
+    "base_price_idr": 108380000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1027779-1A19640_1B000-44",
+        "size": "44",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027779-1A19640_1B000-46",
+        "size": "46",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027779-1A19640_1B000-48",
+        "size": "48",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027779-1A19640_1B000-50",
+        "size": "50",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027779-1A19640_1B000-52",
+        "size": "52",
+        "color_name": "Nero Black",
+        "color_hex": "#111111",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/double-wool-cashmere-coat-nero-1.jpg",
+        "alt": "Double Wool & Cashmere Coat in Nero Black - Versace View 1",
+        "color_name": "Nero Black",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/double-wool-cashmere-coat-nero-2.jpg",
+        "alt": "Double Wool & Cashmere Coat in Nero Black - Versace View 2",
+        "color_name": "Nero Black",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/double-wool-cashmere-coat-nero-3.jpg",
+        "alt": "Double Wool & Cashmere Coat in Nero Black - Versace View 3",
+        "color_name": "Nero Black",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_30",
+    "slug": "embroidered-cotton-jersey-hoodie",
+    "name": "Embroidered Cotton-Jersey Hoodie",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Made from cotton jersey this hooded sweatshirt features sliding Medusa hardware at the drawstring",
+    "category_id": "cat_men",
+    "base_price": 1210,
+    "base_price_idr": 19050000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1008661-1A06213_1B000-XS",
+        "size": "XS",
+        "color_name": "Nero & Gold Logo",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008661-1A06213_1B000-S",
+        "size": "S",
+        "color_name": "Nero & Gold Logo",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008661-1A06213_1B000-M",
+        "size": "M",
+        "color_name": "Nero & Gold Logo",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008661-1A06213_1B000-L",
+        "size": "L",
+        "color_name": "Nero & Gold Logo",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1008661-1A06213_1B000-XL",
+        "size": "XL",
+        "color_name": "Nero & Gold Logo",
+        "color_hex": "#141414",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/embroidered-cotton-jersey-hoodie-nero-1.jpg",
+        "alt": "Embroidered Cotton-Jersey Hoodie in Nero & Gold Logo - Versace View 1",
+        "color_name": "Nero & Gold Logo",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embroidered-cotton-jersey-hoodie-nero-2.jpg",
+        "alt": "Embroidered Cotton-Jersey Hoodie in Nero & Gold Logo - Versace View 2",
+        "color_name": "Nero & Gold Logo",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embroidered-cotton-jersey-hoodie-nero-3.jpg",
+        "alt": "Embroidered Cotton-Jersey Hoodie in Nero & Gold Logo - Versace View 3",
+        "color_name": "Nero & Gold Logo",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_31",
+    "slug": "printed-cotton-jersey-hoodie",
+    "name": "Printed Cotton-Jersey Hoodie",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "A longsleeved hooded sweatshirt in cotton jersey featuring a graphic Medusa Logo at the front and contrast ribbed trims",
+    "category_id": "cat_men",
+    "base_price": 500,
+    "base_price_idr": 7940000.0,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1025433-1A18731_1E090-XS",
+        "size": "XS",
+        "color_name": "Barocco Print White",
+        "color_hex": "#E8E2D5",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025433-1A18731_1E090-S",
+        "size": "S",
+        "color_name": "Barocco Print White",
+        "color_hex": "#E8E2D5",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025433-1A18731_1E090-M",
+        "size": "M",
+        "color_name": "Barocco Print White",
+        "color_hex": "#E8E2D5",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025433-1A18731_1E090-L",
+        "size": "L",
+        "color_name": "Barocco Print White",
+        "color_hex": "#E8E2D5",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1025433-1A18731_1E090-XL",
+        "size": "XL",
+        "color_name": "Barocco Print White",
+        "color_hex": "#E8E2D5",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/printed-cotton-jersey-hoodie-white-1.jpg",
+        "alt": "Printed Cotton-Jersey Hoodie in Barocco Print White - Versace View 1",
+        "color_name": "Barocco Print White",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-hoodie-white-2.jpg",
+        "alt": "Printed Cotton-Jersey Hoodie in Barocco Print White - Versace View 2",
+        "color_name": "Barocco Print White",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/printed-cotton-jersey-hoodie-white-3.jpg",
+        "alt": "Printed Cotton-Jersey Hoodie in Barocco Print White - Versace View 3",
+        "color_name": "Barocco Print White",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_32",
+    "slug": "embroidered-straight-jeans",
+    "name": "Embroidered Straight Jeans",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Cotton denim straightleg jeans in a darkwashed finish featuring a threadembroidered Medusa and Greca motif at the back The fivepocket design is completed by a leather label with a heatstamped Versace Logo and Medusa hardware",
+    "category_id": "cat_men",
+    "base_price": 1190,
+    "base_price_idr": 18860000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 0,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1027308-1A19825_1D040-29",
+        "size": "29",
+        "color_name": "Vintage Wash Blue",
+        "color_hex": "#3A506B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027308-1A19825_1D040-30",
+        "size": "30",
+        "color_name": "Vintage Wash Blue",
+        "color_hex": "#3A506B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027308-1A19825_1D040-31",
+        "size": "31",
+        "color_name": "Vintage Wash Blue",
+        "color_hex": "#3A506B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027308-1A19825_1D040-32",
+        "size": "32",
+        "color_name": "Vintage Wash Blue",
+        "color_hex": "#3A506B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027308-1A19825_1D040-33",
+        "size": "33",
+        "color_name": "Vintage Wash Blue",
+        "color_hex": "#3A506B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/embroidered-straight-jeans-blue-1.jpg",
+        "alt": "Embroidered Straight Jeans in Vintage Wash Blue - Versace View 1",
+        "color_name": "Vintage Wash Blue",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/embroidered-straight-jeans-blue-2.jpg",
+        "alt": "Embroidered Straight Jeans in Vintage Wash Blue - Versace View 2",
+        "color_name": "Vintage Wash Blue",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/embroidered-straight-jeans-blue-3.jpg",
+        "alt": "Embroidered Straight Jeans in Vintage Wash Blue - Versace View 3",
+        "color_name": "Vintage Wash Blue",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_26",
+    "slug": "bound-ring",
+    "name": "Bound Ring",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Ring featuring a sculptural knot motif and an enamelengraved Greca along the sides All Versace jewelry products are lead and nickelfree All materials are hypoallergenic",
+    "category_id": "cat_jewelry",
+    "base_price": 370,
+    "base_price_idr": 5850000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1026989-1A00620_3J030-7",
+        "size": "7",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026989-1A00620_3J030-9",
+        "size": "9",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026989-1A00620_3J030-11",
+        "size": "11",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026989-1A00620_3J030-13",
+        "size": "13",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026989-1A00620_3J030-15",
+        "size": "15",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/bound-ring-gold-1.jpg",
+        "alt": "Bound Ring in Tribute Gold & Ruthenium - Versace View 1",
+        "color_name": "Tribute Gold & Ruthenium",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/bound-ring-gold-2.jpg",
+        "alt": "Bound Ring in Tribute Gold & Ruthenium - Versace View 2",
+        "color_name": "Tribute Gold & Ruthenium",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/bound-ring-gold-3.jpg",
+        "alt": "Bound Ring in Tribute Gold & Ruthenium - Versace View 3",
+        "color_name": "Tribute Gold & Ruthenium",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_27",
+    "slug": "bound-bracelet",
+    "name": "Bound Bracelet ",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Cuff bracelet featuring a sculptural knot motif and an enamelengraved Greca along the sides All Versace jewelry products are lead and nickelfree All materials are hypoallergenic",
+    "category_id": "cat_jewelry",
+    "base_price": 560,
+    "base_price_idr": 8770000.0,
+    "currency": "USD",
+    "is_new": 1,
+    "is_bestseller": 1,
+    "is_runway": 1,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1026988-1A00620_3J030-S",
+        "size": "S",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026988-1A00620_3J030-M",
+        "size": "M",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026988-1A00620_3J030-L",
+        "size": "L",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1026988-1A00620_3J030-XL",
+        "size": "XL",
+        "color_name": "Tribute Gold & Ruthenium",
+        "color_hex": "#D4AF37",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/bound-bracelet-gold-1.jpg",
+        "alt": "Bound Bracelet  in Tribute Gold & Ruthenium - Versace View 1",
+        "color_name": "Tribute Gold & Ruthenium",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/bound-bracelet-gold-2.jpg",
+        "alt": "Bound Bracelet  in Tribute Gold & Ruthenium - Versace View 2",
+        "color_name": "Tribute Gold & Ruthenium",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/bound-bracelet-gold-3.jpg",
+        "alt": "Bound Bracelet  in Tribute Gold & Ruthenium - Versace View 3",
+        "color_name": "Tribute Gold & Ruthenium",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  },
+  {
+    "id": "prod_28",
+    "slug": "greca-ring",
+    "name": "Greca Ring",
+    "subtitle": "Versace Atelier Milano \u2022 Authentic Collection",
+    "description": "Ring in a refined bigalvanic finish featuring an openwork Greca motif All Versace jewelry products are lead and nickelfree All materials are hypoallergenic",
+    "category_id": "cat_jewelry",
+    "base_price": 400,
+    "base_price_idr": 6380000.0,
+    "currency": "USD",
+    "is_new": 0,
+    "is_bestseller": 1,
+    "is_runway": 0,
+    "composition": "100% Authentic Italian Atelier Craftsmanship",
+    "origin": "Made in Italy",
+    "details_json": "[\"Official Gianni Versace S.r.l. Milan Creation\", \"Crafted with signature Medusa and Barocco elements\", \"Includes NFC digital authenticity passport embedded inside label\", \"Complimentary white-glove boutique delivery in rigid Italian gift box\"]",
+    "care_guide": "Specialist luxury care or boutique service. Preserve in provided protective case.",
+    "variants": [
+      {
+        "sku": "1027321-1A00620_4JUT0-7",
+        "size": "7",
+        "color_name": "Tribute Gold & Crystal",
+        "color_hex": "#E5B80B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027321-1A00620_4JUT0-9",
+        "size": "9",
+        "color_name": "Tribute Gold & Crystal",
+        "color_hex": "#E5B80B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027321-1A00620_4JUT0-11",
+        "size": "11",
+        "color_name": "Tribute Gold & Crystal",
+        "color_hex": "#E5B80B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027321-1A00620_4JUT0-13",
+        "size": "13",
+        "color_name": "Tribute Gold & Crystal",
+        "color_hex": "#E5B80B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      },
+      {
+        "sku": "1027321-1A00620_4JUT0-15",
+        "size": "15",
+        "color_name": "Tribute Gold & Crystal",
+        "color_hex": "#E5B80B",
+        "stock_quantity": 12,
+        "price_delta": 0
+      }
+    ],
+    "images": [
+      {
+        "url": "/images/products/greca-ring-gold-1.jpg",
+        "alt": "Greca Ring in Tribute Gold & Crystal - Versace View 1",
+        "color_name": "Tribute Gold & Crystal",
+        "is_primary": 1,
+        "display_order": 1
+      },
+      {
+        "url": "/images/products/greca-ring-gold-2.jpg",
+        "alt": "Greca Ring in Tribute Gold & Crystal - Versace View 2",
+        "color_name": "Tribute Gold & Crystal",
+        "is_primary": 0,
+        "display_order": 2
+      },
+      {
+        "url": "/images/products/greca-ring-gold-3.jpg",
+        "alt": "Greca Ring in Tribute Gold & Crystal - Versace View 3",
+        "color_name": "Tribute Gold & Crystal",
+        "is_primary": 0,
+        "display_order": 3
+      }
+    ]
+  }
+]

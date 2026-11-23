@@ -171,13 +171,15 @@ export function ArticleClient({
     },
   ];
 
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, "").trim();
+
   if (headingBlocksWithIndex.length >= 2) {
     if (headingBlocksWithIndex.length <= 4) {
       headingBlocksWithIndex.forEach((h, hIdx) => {
         chapters.push({
           id: `bab-${hIdx + 2}`,
           number: hIdx + 2,
-          title: h.block.text!.trim(),
+          title: stripHtml(h.block.text!),
           targetId: `heading-block-${h.index}`,
         });
       });
@@ -195,7 +197,7 @@ export function ArticleClient({
         chapters.push({
           id: `bab-${hIdx + 2}`,
           number: hIdx + 2,
-          title: h.block.text!.trim(),
+          title: stripHtml(h.block.text!),
           targetId: `heading-block-${h.index}`,
         });
       });
@@ -204,7 +206,7 @@ export function ArticleClient({
     chapters.push({
       id: "bab-2",
       number: 2,
-      title: headingBlocksWithIndex[0].block.text!.trim(),
+      title: stripHtml(headingBlocksWithIndex[0].block.text!),
       targetId: `heading-block-${headingBlocksWithIndex[0].index}`,
     });
     chapters.push({
@@ -292,24 +294,14 @@ export function ArticleClient({
   }, []);
 
   const handleZoomIn = useCallback(() => {
-    setZoomScale((prev) => Math.min(4, parseFloat((prev + 0.5).toFixed(2))));
+    setZoomScale((prev) => Math.min(4, parseFloat((prev + 0.25).toFixed(2))));
   }, []);
 
   const handleZoomOut = useCallback(() => {
     setZoomScale((prev) => {
-      const next = Math.max(1, parseFloat((prev - 0.5).toFixed(2)));
+      const next = Math.max(1, parseFloat((prev - 0.25).toFixed(2)));
       if (next === 1) setPanPosition({ x: 0, y: 0 });
       return next;
-    });
-  }, []);
-
-  const handleToggleZoom = useCallback(() => {
-    setZoomScale((prev) => {
-      if (prev > 1) {
-        setPanPosition({ x: 0, y: 0 });
-        return 1;
-      }
-      return 2.5;
     });
   }, []);
 
@@ -324,9 +316,12 @@ export function ArticleClient({
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging || zoomScale <= 1) return;
+    const maxPan = (zoomScale - 1) * 350;
+    const newX = e.clientX - dragStartRef.current.x;
+    const newY = e.clientY - dragStartRef.current.y;
     setPanPosition({
-      x: e.clientX - dragStartRef.current.x,
-      y: e.clientY - dragStartRef.current.y,
+      x: Math.max(-maxPan, Math.min(maxPan, newX)),
+      y: Math.max(-maxPan, Math.min(maxPan, newY)),
     });
   };
 
@@ -348,8 +343,29 @@ export function ArticleClient({
       return;
     }
 
-    const prevOverflow = document.body.style.overflow;
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    const handleNativeWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const zoomStep = 0.25;
+      const isZoomIn = e.deltaY < 0;
+
+      setZoomScale((prev) => {
+        const nextScale = isZoomIn ? prev + zoomStep : prev - zoomStep;
+        const clamped = Math.min(4, Math.max(1, parseFloat(nextScale.toFixed(2))));
+        if (clamped === 1) {
+          setPanPosition({ x: 0, y: 0 });
+        }
+        return clamped;
+      });
+    };
+
+    window.addEventListener("wheel", handleNativeWheel, { passive: false });
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -369,7 +385,9 @@ export function ArticleClient({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.body.style.overflow = prevOverflow;
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
+      window.removeEventListener("wheel", handleNativeWheel);
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [lightboxOpen, allStoryPhotos.length, resetZoom]);
@@ -608,9 +626,10 @@ export function ArticleClient({
                   <span className="text-[9.5px] uppercase tracking-[0.25em] font-semibold text-[#a7c080] block mb-2 font-mono">
                     {chapterNum ? `BAB ${String(chapterNum).padStart(2, "0")}` : `BAGIAN`}
                   </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-snug tracking-tight">
-                    {item.text}
-                  </h2>
+                  <h2
+                    className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-snug tracking-tight"
+                    dangerouslySetInnerHTML={{ __html: item.text }}
+                  />
                 </div>
               );
             }
@@ -710,7 +729,10 @@ export function ArticleClient({
                     <span className="uppercase tracking-widest text-[#a7c080] font-semibold text-[10px] whitespace-nowrap">
                       {label}:
                     </span>
-                    <span className="text-neutral-300 font-sans">{value}</span>
+                    <span
+                      className="text-neutral-300 font-sans"
+                      dangerouslySetInnerHTML={{ __html: value }}
+                    />
                   </div>
                 );
               }
@@ -723,9 +745,8 @@ export function ArticleClient({
                     key={`p-${item.index}-${itemIdx}`}
                     id={`block-anchor-${item.index}`}
                     className="font-serif text-lg sm:text-xl text-neutral-200 leading-[1.8] mb-8 first-letter:float-left first-letter:text-6xl first-letter:pr-4 first-letter:font-serif first-letter:font-bold first-letter:text-[#a7c080] first-letter:leading-none scroll-mt-28"
-                  >
-                    {text}
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: text }}
+                  />
                 );
               }
 
@@ -735,9 +756,8 @@ export function ArticleClient({
                   key={`p-${item.index}-${itemIdx}`}
                   id={`block-anchor-${item.index}`}
                   className="font-serif text-[17px] sm:text-[19px] text-[#dedede] leading-[1.85] mb-6 font-light scroll-mt-28"
-                >
-                  {text}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: text }}
+                />
               );
             }
 
@@ -1052,8 +1072,9 @@ export function ArticleClient({
             }`}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
-            onDoubleClick={handleToggleZoom}
-            title={zoomScale > 1 ? "Drag to pan, double click to reset" : "Double click or scroll to zoom"}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            title={zoomScale > 1 ? "Drag to pan • Scroll mouse to zoom" : "Scroll mouse to zoom in / out"}
           >
             <div
               className={`relative w-full h-full max-w-6xl max-h-[78vh] ${

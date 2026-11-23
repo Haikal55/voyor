@@ -95,7 +95,6 @@ export function ProductImageGallery({
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
 
-    const modal = modalRef.current;
     const handleNativeWheel = (e: WheelEvent) => {
       e.preventDefault();
       e.stopPropagation();
@@ -113,16 +112,12 @@ export function ProductImageGallery({
       });
     };
 
-    if (modal) {
-      modal.addEventListener("wheel", handleNativeWheel, { passive: false });
-    }
+    window.addEventListener("wheel", handleNativeWheel, { passive: false });
 
     return () => {
       document.body.style.overflow = prevBodyOverflow;
       document.documentElement.style.overflow = prevHtmlOverflow;
-      if (modal) {
-        modal.removeEventListener("wheel", handleNativeWheel);
-      }
+      window.removeEventListener("wheel", handleNativeWheel);
     };
   }, [lightboxOpen, resetZoom]);
 
@@ -367,8 +362,9 @@ export function ProductImageGallery({
             }`}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
-            onDoubleClick={handleToggleZoom}
-            title={zoomScale > 1 ? "Drag to pan, double click to reset" : "Scroll wheel or double click to zoom"}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            title={zoomScale > 1 ? "Drag to pan • Scroll wheel to zoom" : "Scroll wheel to zoom in / out"}
           >
             <div
               className={`relative w-full h-full max-w-5xl max-h-[82vh] ${

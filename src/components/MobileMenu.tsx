@@ -18,17 +18,6 @@ export function MobileMenu({ categories = [] }: { categories?: Category[] }) {
     setCurrency,
   } = useLuxury();
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
-
   const close = () => setIsMenuOpen(false);
 
   const currencies: { code: CurrencyCode; label: string; symbol: string; country: string }[] = [
@@ -41,14 +30,14 @@ export function MobileMenu({ categories = [] }: { categories?: Category[] }) {
   return (
     <AnimatePresence>
       {isMenuOpen && (
-        <div className="fixed inset-0 z-[60] overflow-hidden">
+        <div className="fixed inset-0 z-[60] overflow-hidden" onWheel={(e) => e.stopPropagation()}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={close}
-            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            className="absolute inset-0 bg-black/70 backdrop-blur-md touch-none"
           />
 
           <div className="fixed inset-y-0 left-0 max-w-full flex">
@@ -89,7 +78,7 @@ export function MobileMenu({ categories = [] }: { categories?: Category[] }) {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-6 space-y-8">
+              <div className="flex-1 overflow-y-auto overscroll-contain p-6 space-y-8">
                 <nav className="space-y-1">
                   <p className="text-[10px] uppercase tracking-luxury text-[#888] mb-3">
                     Navigation

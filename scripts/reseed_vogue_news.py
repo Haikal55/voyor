@@ -114,6 +114,36 @@ def clean_text(s):
     s = re.sub(r'\s+', ' ', s)
     return s.strip()
 
+def clean_html_with_links(el):
+    if not el: return ""
+    copy_soup = BeautifulSoup(str(el), 'html.parser')
+    root = copy_soup.find(['p', 'h2', 'h3'])
+    if not root:
+        root = copy_soup
+
+    for tag in root.find_all(True):
+        if tag.name == 'a':
+            href = tag.get('href', '').strip()
+            if not href or any(k in href for k in ['sign-in', 'account', 'facebook', 'twitter', 'pinterest']):
+                tag.unwrap()
+                continue
+            if href.startswith('/'):
+                href = f"https://www.vogue.com{href}"
+            tag.attrs = {
+                'href': href,
+                'target': '_blank',
+                'rel': 'noopener noreferrer',
+                'class': 'editorial-link text-white underline decoration-[#a7c080]/60 hover:decoration-[#a7c080] hover:text-[#a7c080] underline-offset-4 transition-colors font-medium'
+            }
+        elif tag.name in ['strong', 'b', 'em', 'i']:
+            tag.attrs = {}
+        else:
+            tag.unwrap()
+
+    html_str = ''.join(str(c) for c in root.contents)
+    html_str = re.sub(r'\s+', ' ', html_str).strip()
+    return html_str
+
 def is_spam(t):
     l = t.lower()
     return any(k in l for k in [
@@ -206,21 +236,34 @@ def fetch_and_clean_article(cfg, idx):
 
     for el in raw_elements:
         if el.name in ['h2', 'h3']:
-            txt = clean_text(el.get_text())
-            if not txt or len(txt) < 3 or len(txt) > 120 or is_spam(txt):
+            txt_clean = clean_text(el.get_text())
+            if not txt_clean or len(txt_clean) < 3 or len(txt_clean) > 140 or is_spam(txt_clean):
                 continue
             if blocks and blocks[-1]["type"] == "heading":
                 continue
-            blocks.append({"type": "heading", "text": txt})
+                
+            # If heading has an affiliate / external link, preserve it
+            a_tag = el.find('a')
+            if a_tag and a_tag.get('href'):
+                h_link = a_tag.get('href').strip()
+                if h_link.startswith('/'): h_link = f"https://www.vogue.com{h_link}"
+                heading_html = f'<a href="{h_link}" target="_blank" rel="noopener noreferrer" class="hover:text-[#a7c080] transition-colors">{txt_clean}</a>'
+            else:
+                heading_html = txt_clean
+                
+            blocks.append({"type": "heading", "text": heading_html})
             
         elif el.name == 'p':
-            txt = clean_text(el.get_text())
-            if not txt or len(txt) < 25 or is_spam(txt):
+            txt_clean = clean_text(el.get_text())
+            if not txt_clean or len(txt_clean) < 25 or is_spam(txt_clean):
                 continue
-            if txt in seen_texts:
+            if txt_clean in seen_texts:
                 continue
-            seen_texts.add(txt)
-            blocks.append({"type": "paragraph", "text": txt})
+            seen_texts.add(txt_clean)
+            
+            # Preserve rich inline hyperlinks!
+            p_html = clean_html_with_links(el)
+            blocks.append({"type": "paragraph", "text": p_html})
             
         elif el.name == 'figure':
             img = el.find('img')
@@ -295,14 +338,14 @@ def fetch_and_clean_article(cfg, idx):
         blocks.pop()
 
     # Calculate words & reading time
-    p_texts = [b["text"] for b in blocks if b["type"] == "paragraph"]
+    p_texts = [clean_text(b["text"]) for b in blocks if b["type"] == "paragraph"]
     word_count = sum(len(t.split()) for t in p_texts)
     reading_min = max(3, round(word_count / 180))
     reading_time = f"{reading_min} min read"
     
     slug = slugify(title) or url.split('/')[-1]
     
-    # Clean text content for search / full text
+    # Clean plain text content for search / sitemap / meta
     content = "\n\n".join(p_texts)
     
     return {

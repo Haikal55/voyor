@@ -24,14 +24,14 @@ export function CartDrawer() {
   return (
     <AnimatePresence>
       {isCartOpen && (
-        <div className="fixed inset-0 z-[70] overflow-hidden">
+        <div className="fixed inset-0 z-[70] overflow-hidden" onWheel={(e) => e.stopPropagation()}>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={() => setIsCartOpen(false)}
-            className="absolute inset-0 bg-black/75 backdrop-blur-md"
+            className="absolute inset-0 bg-black/75 backdrop-blur-md touch-none"
           />
 
           <div className="fixed inset-y-0 right-0 max-w-full flex">
@@ -55,7 +55,7 @@ export function CartDrawer() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-6 space-y-6">
+              <div className="flex-1 overflow-y-auto overscroll-contain p-6 space-y-6">
                 {cart.length === 0 ? (
                   <div className="text-center py-16 space-y-4">
                     <p className="font-serif text-base text-neutral-400">

@@ -12,17 +12,6 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
   const { isSearchOpen, setIsSearchOpen, currency } = useLuxury();
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    if (isSearchOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isSearchOpen]);
-
   if (!isSearchOpen) return null;
 
   const filtered = query.trim()
@@ -37,7 +26,7 @@ export function SearchModal({ allProducts = [] }: { allProducts: Product[] }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto">
+      <div className="fixed inset-0 z-50 overflow-y-auto overscroll-contain">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

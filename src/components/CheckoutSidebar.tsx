@@ -173,7 +173,7 @@ export function CheckoutSidebar() {
   return (
     <AnimatePresence>
       {isCheckoutOpen && (
-        <div className="fixed inset-0 z-[80] overflow-hidden">
+        <div className="fixed inset-0 z-[80] overflow-hidden" onWheel={(e) => e.stopPropagation()}>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -181,7 +181,7 @@ export function CheckoutSidebar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             onClick={handleClose}
-            className="absolute inset-0 bg-black/80 will-change-[opacity]"
+            className="absolute inset-0 bg-black/80 will-change-[opacity] touch-none"
           />
 
           <div className="fixed inset-y-0 right-0 max-w-full flex">

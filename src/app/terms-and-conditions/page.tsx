@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | VOYOR Official Boutique",
   description:
     "Official General Terms and Conditions of Sale and Website Use for VOYOR S.r.l. Milano.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
 };
 
 export default function TermsAndConditionsPage() {

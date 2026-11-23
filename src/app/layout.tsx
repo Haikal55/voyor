@@ -13,6 +13,15 @@ import { CookiePreferencesModal } from "@/components/CookiePreferencesModal";
 import { SplashScreen } from "@/components/SplashScreen";
 import { NavigationProgressBar } from "@/components/NavigationProgressBar";
 import { getCartAction } from "./actions/cart";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  getOrganizationSchema,
+  getWebsiteSchema,
+} from "@/lib/seo";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -83,26 +92,82 @@ const radiantFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "VOYOR | Italian Haute Couture & Fashion Milano",
-  description:
-    "VOYOR Official Online Boutique. Discover the Fall/Winter 2026 Runway collection, iconic Barocco silk shirts, atelier evening gowns, and Sovereign leather bags.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: "VOYOR S.P.A. Milano", url: SITE_URL }],
+  creator: "VOYOR",
+  publisher: "VOYOR S.P.A.",
+  category: "Luxury Fashion & Haute Couture",
   keywords: [
     "VOYOR",
+    "VOYOR Milano",
     "Haute Couture",
-    "Italian Fashion",
-    "Milano Runway",
-    "Barocco Silk",
-    "Leather Handbags",
+    "Italian Luxury Fashion",
+    "Milan Fashion Week",
+    "Barocco Silk Shirt",
+    "Atelier Evening Gowns",
+    "Sovereign Leather Bags",
+    "Runway FW26",
+    "Quiet Luxury",
+    "Designer Menswear",
+    "Designer Womenswear",
+    "Italian Silk",
+    "Made in Italy",
+    "Bespoke Tailoring Milano",
   ],
+  referrer: "origin-when-cross-origin",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "VOYOR Milano Haute Couture Collection",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+    creator: "@voyor",
+    site: "@voyor",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
@@ -115,12 +180,13 @@ export default async function RootLayout({
   try {
     const res = await getCartAction();
     initialCart = res.items;
-  } catch (e) {
-
-  }
+  } catch (e) {}
 
   const categories = getAllCategories();
   const allProducts = getAllProducts();
+
+  const organizationSchema = getOrganizationSchema();
+  const websiteSchema = getWebsiteSchema();
 
   return (
     <html
@@ -128,6 +194,20 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${sfPro.variable} ${scriptFont.variable} ${radiantFont.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="min-h-full flex flex-col bg-[#080808] text-[#f5f4f0] selection:bg-[#a7c080] selection:text-black font-sans"

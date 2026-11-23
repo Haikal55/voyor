@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | VOYOR Official Boutique",
   description:
     "Official Privacy Policy and Data Protection Notice of VOYOR S.r.l. pursuant to EU Regulation 2016/679 (GDPR).",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

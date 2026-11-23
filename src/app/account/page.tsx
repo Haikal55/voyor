@@ -8,12 +8,17 @@ import {
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { orders } from "@/lib/db/schema";
-import { eq, desc, sql } from "drizzle-orm";
+import { desc, sql } from "drizzle-orm";
 import { AccountClientPage } from "./AccountClientPage";
 
 export const metadata: Metadata = {
   title: "My Account | VOYOR Official Online Boutique",
-  description: "View your orders, wishlist, saved addresses, and appointments at VOYOR Milano.",
+  description:
+    "View your orders, wishlist, saved addresses, and appointments at VOYOR Milano.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default async function AccountPage() {
